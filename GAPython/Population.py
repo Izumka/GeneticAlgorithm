@@ -43,11 +43,11 @@ class Population():
         for _ in range(floor(self.size*self.cross_prob)):
             chrom = np.random.choice(self.population_set, p=weights)
             other_chrom = np.random.choice(self.population_set, p=weights)
-            population_set.remove(chrom)
-            population_set.remove(other_chrom)
+            self.population_set.remove(chrom)
+            self.population_set.remove(other_chrom)
             chrom, other_chrom = chrom.crossover(other_chrom)
-            population_set.append(chrom)
-            population_set.append(other_chrom)
+            self.population_set.append(chrom)
+            self.population_set.append(other_chrom)
 
     def prob_mutation(self):
         #mutate every chromosome
@@ -57,7 +57,9 @@ class Population():
 
     def refresh_nofit(self): #kill lower part of less fit individuals, append lack of them
         lethal_num = floor(self.size*self.lethal)
-        self.population_set.sort(key=lambda x: x.fitness, reverse=True)
+        self.population_set.sort(key=lambda x: x.fitness)
+	self.best_fit = self.population_set[0]
+	self.worst_fit = self.population_set[1]
         sub_set = self.generate_subset(lethal_num)
         self.population_set = self.population_set[:(self.size-lethal_num)]
         self.population_set.extend(sub_set)
