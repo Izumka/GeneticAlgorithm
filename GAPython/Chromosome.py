@@ -7,6 +7,7 @@ class Chromosome:
         self.fitness = 0
         self.fitness_fun = kwargs["fitness_fun"]
         self.num_type = kwargs["num_type"]
+        print(self.num_type)
 
     def get_fitness(self):
         return self.fitness_fun(self.genes)
@@ -17,11 +18,13 @@ class Chromosome:
         elif self.num_type == "dec":
             self.genes = [random.randint(0, 9) for i in range(self.length)]
         elif self.num_type == "int":
-            self.genes = random.shuffle([i for i in range(self.length)])
-        return self.genes
+            tmp_genes = [i for i in range(self.length)]
+            self.genes = random.shuffle(tmp_genes)
+            print(self.genes)
+        #return self.genes
 
     def __str__(self):
-        return str([str(i) for i in self.genes])
+        return str(self.genes)
 
     def crossover(self, other):
         parents = {"parent_1": self, "parent_2": other}
