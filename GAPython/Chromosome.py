@@ -1,22 +1,23 @@
 import random
 
-class chromosome:
-    def __init__(self, length, fitness_fun, num_type="bin", genes=[]):
-        self.length = length
-        self.genes = genes
+class Chromosome:
+    def __init__(self, **kwargs):
+        self.length = kwargs["length"]
+#        self.genes = kwargs["genes"]
         self.fitness = 0
-        self.fitness_fun = fitness_fun
-        self.num_type = num_type
+        self.fitness_fun = kwargs["fitness_fun"]
+        self.num_type = kwargs["num_type"]
 
     def get_fitness(self):
         return self.fitness_fun(self.genes)
 
     def get_genes(self):
-        if len(self.genes) == 0:
-            if self.num_type == "bin":
-                self.genes = [random.randint(0, 1) for i in range(self.length)]
-            elif self.num_type == "dec":
-                self.genes = [random.randint(0, 9) for i in range(self.length)]
+        if self.num_type == "bin":
+            self.genes = [random.randint(0, 1) for i in range(self.length)]
+        elif self.num_type == "dec":
+            self.genes = [random.randint(0, 9) for i in range(self.length)]
+        elif self.num_type == "int":
+            self.genes = random.shuffle([i for i in range(self.length)])
         return self.genes
 
     def __str__(self):
