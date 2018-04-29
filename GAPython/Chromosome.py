@@ -45,11 +45,7 @@ class Chromosome:
         child_2 = Chromosome(length=length, genes=new_genes_2, fitness_fun=fitness_fun)
         return (child_1, child_2)
 
-    def mutation(self):
+    def mutate(self):
         swap_1 = random.randint(0, self.length - 1)
         swap_2 = random.randint(0, self.length - 1)
         self.genes[swap_1], self.genes[swap_2] = self.genes[swap_2], self.genes[swap_1]
-
-def fit(lst):
-    n = len(lst)
-    return sum([((i + 1) / n) * lst[i] for i in range(n)])
