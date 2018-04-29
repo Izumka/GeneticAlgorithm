@@ -25,7 +25,6 @@ class Population():
         for _ in range(chrom_num):
             chromosome = Chromosome(num_type="int", length=self.genes_length,
                          fitness_fun=self.fitness_fun)
-            chromosome.get_genes()
             tmp_arr.append(chromosome)
         return tmp_arr
 
@@ -58,22 +57,11 @@ class Population():
     def refresh_nofit(self): #kill lower part of less fit individuals, append lack of them
         lethal_num = floor(self.size*self.lethal)
         self.population_set.sort(key=lambda x: x.fitness)
-	self.best_fit = self.population_set[0]
-	self.worst_fit = self.population_set[1]
+        self.best_fit = self.population_set[0]
+        self.worst_fit = self.population_set[1]
         sub_set = self.generate_subset(lethal_num)
         self.population_set = self.population_set[:(self.size-lethal_num)]
         self.population_set.extend(sub_set)
 
     def __str__(self):
         return " ".join([str(i) for i in self.population_set])
-
-if __name__ == "__main__":
-    def always_fit():
-        return "YEAA"
-    population = Population(genes_length=5, num_type="int", fitness_fun=always_fit, size=10)
-
-    population.generate_initial()
-    print(population)
-
-    population.refresh_nofit()
-    print(population)
