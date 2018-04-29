@@ -13,8 +13,8 @@ if __name__ == "__main__":
     print(population)
 
     while True:
-        population.prob_crossover
-        population.prob_mutation
+        population.prob_crossover()
+        population.prob_mutation()
         population.refresh_nofit()
         best = population.best_fit.fitness
         worst = population.worst_fit.fitness

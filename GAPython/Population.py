@@ -42,11 +42,19 @@ class Population():
         for _ in range(floor(self.size*self.cross_prob)):
             chrom = np.random.choice(self.population_set, p=weights)
             other_chrom = np.random.choice(self.population_set, p=weights)
+            print(chrom, other_chrom)
             self.population_set.remove(chrom)
-            self.population_set.remove(other_chrom)
+            same_chrom = False
+            try:
+                self.population_set.remove(other_chrom)
+            except ValueError:
+                #ignore if that is one instance of class
+                same_chrom = True
+                pass
             chrom, other_chrom = chrom.crossover(other_chrom)
             self.population_set.append(chrom)
-            self.population_set.append(other_chrom)
+            if not same_chrom:
+                self.population_set.append(other_chrom)
 
     def prob_mutation(self):
         #mutate every chromosome
