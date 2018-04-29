@@ -3,11 +3,9 @@ import random
 class Chromosome:
     def __init__(self, **kwargs):
         self.length = kwargs["length"]
-#        self.genes = kwargs["genes"]
-        self.fitness = 0
+        self.fitness = random.randint(0,9)
         self.fitness_fun = kwargs["fitness_fun"]
         self.num_type = kwargs["num_type"]
-        print(self.num_type)
 
     def get_fitness(self):
         return self.fitness_fun(self.genes)
@@ -19,9 +17,8 @@ class Chromosome:
             self.genes = [random.randint(0, 9) for i in range(self.length)]
         elif self.num_type == "int":
             tmp_genes = [i for i in range(self.length)]
-            self.genes = random.shuffle(tmp_genes)
-            print(self.genes)
-        #return self.genes
+            random.shuffle(tmp_genes)
+            self.genes = tmp_genes
 
     def __str__(self):
         return str(self.genes)
