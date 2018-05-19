@@ -95,7 +95,12 @@ public:
         vector<vector<int>> container2 = {slicer(new_genes_2.begin(), new_genes_2.begin() + mut_start + 1), slicer((*parents["parent2"]).genes.begin() + mut_start, (*parents["parent2"]).genes.begin() + mut_start + mut_length), slicer(new_genes_2.begin() + mut_start + mut_length, new_genes_2.begin() + new_genes_2.size())};
         v_merge(new_genes_2, container2);
 
-
+        for(int i: (*parents["parent2"]).genes){
+            if(find(new_genes_1.begin(), new_genes_1.end(), i) == new_genes_1.end()){
+                if()
+                new_genes_1[find(new_genes_1.begin(), new_genes_1.end(), -1) - new_genes_1.begin()];
+            }
+        }
     }
 
     int print_sth(Chromosome *other_chrom){
