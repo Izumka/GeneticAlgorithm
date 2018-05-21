@@ -103,9 +103,9 @@ void Population<n_type, f_type>::refresh_nofit() {
 
 template<typename n_type, typename f_type>
 vector<Chromosome> Population<n_type, f_type>::gen(int leght) {
-    vector<Chromosome> qweqfff(leght);
+    vector<Chromosome> set(leght);
     for (int i = 0; i < leght; i++) {
-        qweqfff[i] = Chromosome(leght, getFitnes_fun());
+        set[i] = Chromosome(leght, getFitnes_fun());
     }
-    return qweqfff;
+    return set;
 }
