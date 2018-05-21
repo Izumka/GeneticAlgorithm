@@ -3,4 +3,4 @@ project(chromosome)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(chromosome main.cpp)
+add_executable(chromosome main.cpp population.h population.cpp chromosome.h)
