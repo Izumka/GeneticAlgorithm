@@ -46,7 +46,9 @@ public:
 
     void refresh_nofit();
 
-    void  werwerwer();
+
+
+    vector<Chromosome> gen(int leght);
 
     vector<Chromosome> getPopulation_set() const {
         return population_set;
@@ -85,13 +87,6 @@ public:
         Population::num_type = num_type;
     }
 
-    f_type getFitnes_fun() const {
-        return fitnes_fun;
-    }
-
-    void setFitnes_fun(f_type fitnes_fun) {
-        Population::fitnes_fun = fitnes_fun;
-    }
 
     int getSize() const {
         return size;
@@ -99,6 +94,10 @@ public:
 
     void setSize(int size) {
         Population::size = size;
+    }
+
+    const function<f_type(vector<f_type>)> &getFitnes_fun() const {
+        return fitnes_fun;
     }
 
     virtual ~Population() {

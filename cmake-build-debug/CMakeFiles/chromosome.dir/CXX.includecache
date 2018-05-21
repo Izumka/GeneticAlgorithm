@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Oles/CLionProjects/chromosome/main.cpp
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/chromosome.h
 iostream
 -
 string
@@ -31,6 +31,44 @@ iterator
 -
 algorithm
 -
+cstdlib
+-
 time.h
+-
+
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/main.cpp
+iostream
+-
+chromosome.h
+-
+population.h
+-
+vector
+-
+valarray
+-
+population.h
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.h
+
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.cpp
+chromosome.h
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/chromosome.h
+population.h
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.h
+string
+-
+vector
+-
+valarray
+-
+cmath
+-
+stdlib.h
+-
+time.h
+-
+
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.h
+iostream
 -
 

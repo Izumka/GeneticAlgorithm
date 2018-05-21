@@ -1,9 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/chromosome.dir/main.cpp.obj"
+  "CMakeFiles/chromosome.dir/main.cpp.o"
+  "CMakeFiles/chromosome.dir/population.cpp.o"
   "chromosome.pdb"
-  "chromosome.exe"
-  "chromosome.exe.manifest"
-  "libchromosome.dll.a"
+  "chromosome"
 )
 
 # Per-language clean rules from dependency scanning.

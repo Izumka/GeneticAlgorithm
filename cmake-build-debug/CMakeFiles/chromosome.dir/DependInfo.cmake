@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Oles/CLionProjects/chromosome/main.cpp" "C:/Users/Oles/CLionProjects/chromosome/cmake-build-debug/CMakeFiles/chromosome.dir/main.cpp.obj"
+  "/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/main.cpp" "/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/chromosome.dir/main.cpp.o"
+  "/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.cpp" "/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/chromosome.dir/population.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

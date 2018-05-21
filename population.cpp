@@ -4,8 +4,9 @@
 #include <vector>
 #include <valarray>
 #include <cmath>
+#include <stdlib.h>
 #include <time.h>
-
+#include <algorithm>
 using namespace std;
 
 template<typename n_type, typename f_type>
@@ -45,30 +46,60 @@ void Population<n_type, f_type>::prob_crossover() {
     const vector<double> probabilities = calc_prob();
 //
     vector<double> vec(calc_prob().size());
+    srand (time(NULL) ); //initialize the random seed
 
-//    const vector<double> samples{ 1, 2, 3, 4, 5, 6, 7 };
-//    const vector<double> probabilities{ 0.1, 0.2, 0.1, 0.5, 0,1 };
-
-    std::default_random_engine generator;
-    std::discrete_distribution<int> distribution(probabilities.begin(), probabilities.end());
-
-    vector<int> indices(vec.size());
-    std::generate(indices.begin(), indices.end(), [&generator, &distribution]() { return distribution(generator); });
-
-    std::transform(indices.begin(), indices.end(), vec.begin(), [&population_set](int index) { return population_set[index]; });
+    int RandIndex1 = rand() % population_set.size(); //generates a random number between 0 and
+    Chromosome &chromosome1 = population_set[RandIndex1];
+//
+    int RandIndex2 = rand() % population_set.size(); //generates a random number between 0 and
+    Chromosome & chromosome2 = population_set[RandIndex2];
+//
+    population_set[RandIndex1] = chromosome1.crossover(&chromosome2);
 }
 
 template<typename n_type, typename f_type>
 void Population<n_type, f_type>::prob_mutation() {
-
+//
+    for (Chromosome chromosome : population_set) {
+//
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_real_distribution<> dis(0, 1);
+//
+        if(dis(gen)< prob_mut){
+//            chromosome.mutate();
+        }
+    }
 }
+
+double wayToSort(Chromosome chromosome) { return chromosome.fitness;}
 
 template<typename n_type, typename f_type>
 void Population<n_type, f_type>::refresh_nofit() {
+    auto lethul_num = floor(size * lethal);
+
+    valarray<Chromosome> to_sort_arr(population_set.size());
+//
+//    for (int i = 0; i < population_set.size(); i++) {
+//        to_sort_arr[i] = population_set[i];
+//    }
+//
+    sort(population_set.begin(), population_set.end(), wayToSort);
+//
+    Chromosome best = population_set[0];
+    Chromosome worst = population_set[1];
+//
+    vector<Chromosome> sub_set = gen(lethul_num);
+
+//    todo
 
 }
 
 template<typename n_type, typename f_type>
-void Population<n_type, f_type>::werwerwer() {
-
+vector<Chromosome> Population<n_type, f_type>::gen(int leght) {
+    vector<Chromosome> qweqfff(leght);
+    for (int i = 0; i < leght; i++) {
+        qweqfff[i] = Chromosome(leght, getFitnes_fun());
+    }
+    return qweqfff;
 }
