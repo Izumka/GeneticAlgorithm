@@ -97,25 +97,48 @@ public:
 
         for(int i: (*parents["parent2"]).genes){
             if(find(new_genes_1.begin(), new_genes_1.end(), i) == new_genes_1.end()){
-                if()
-                new_genes_1[find(new_genes_1.begin(), new_genes_1.end(), -1) - new_genes_1.begin()];
+                int pos = find(new_genes_1.begin(), new_genes_1.end(), -1) - new_genes_1.begin();
+                if(!pos>=new_genes_1.size()){
+                    new_genes_1[pos] = i;
+                }
             }
         }
+
+        for(int j: (*parents["parent1"]).genes){
+            if(find(new_genes_2.begin(), new_genes_2.end(), j) == new_genes_2.end()){
+                int pos = find(new_genes_2.begin(), new_genes_2.end(), -1) - new_genes_2.begin();
+                if(!pos>=new_genes_2.size()){
+                    new_genes_2[pos] = j;
+                }
+            }
+        }
+
+        int new_length = (*this).length;
+        function<int(vector<int>)> new_fitness_func = (*this).fitness_func;
+
+        Chromosome child_1 = Chromosome(new_length, new_fitness_func, new_genes_1);
+        Chromosome child_2 = Chromosome(new_length, new_fitness_func, new_genes_2);
+        return(child_1,child_2);
+    }
+
+    void mutate(){
+        srand ( time(NULL) );
+        int swap_1 = rand() % ((*this).genes.size()) + 0;
+        int swap_2 = rand() % ((*this).genes.size()) + 0;
+
+        swap(this->genes[swap_1], this->genes[swap_2]);
     }
 
     int print_sth(Chromosome *other_chrom){
         return 0;
     }
-    double GetLengthVector(){
-        return 0;
-    }
 };
 
-int main() {
-    vector<int> x = {0,1,2,3,4};
-    Chromosome lol = Chromosome(10,fit_func,x);
-    Chromosome lal = Chromosome(5,fit_func,x);
-
+//int main() {
+//    vector<int> x = {0,1,2,3,4};
+//    Chromosome lol = Chromosome(10,fit_func,x);
+//    Chromosome lal = Chromosome(5,fit_func,x);
+//    lol.mutate();
 //    vector<int> v;
 //    for (int i= 0; i < 10; ++i) { v.push_back(i); }
 //
@@ -127,5 +150,5 @@ int main() {
 //    for(int i:v1){
 //        cout<<i<<endl;
 //    }
-    return 0;
-}
+//    return 0;
+//}
