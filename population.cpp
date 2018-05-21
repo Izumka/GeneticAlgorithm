@@ -90,9 +90,15 @@ void Population<n_type, f_type>::refresh_nofit() {
     Chromosome worst = population_set[1];
 //
     vector<Chromosome> sub_set = gen(lethul_num);
-
-//    todo
-
+    vector<Chromosome> one;
+//
+    for (int i = 0; i < population_set.size() - lethul_num ; i++) {
+        one[i] = population_set[i];
+    }
+    for (int j = (population_set.size() - lethul_num), b =0; j < population_set.size() ; j++, b++) {
+        one[j] = sub_set[b];
+    }
+    population_set = one;
 }
 
 template<typename n_type, typename f_type>
