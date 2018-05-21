@@ -122,32 +122,72 @@ chromosome/fast:
 	$(MAKE) -f CMakeFiles\chromosome.dir\build.make CMakeFiles/chromosome.dir/build
 .PHONY : chromosome/fast
 
-main.obj: main.cpp.obj
+#=============================================================================
+# Target rules for targets named chromosome_binary
 
-.PHONY : main.obj
+# Build rule for target.
+chromosome_binary: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 chromosome_binary
+.PHONY : chromosome_binary
+
+# fast build rule for target.
+chromosome_binary/fast:
+	$(MAKE) -f CMakeFiles\chromosome_binary.dir\build.make CMakeFiles/chromosome_binary.dir/build
+.PHONY : chromosome_binary/fast
+
+Chromosome.obj: Chromosome.cpp.obj
+
+.PHONY : Chromosome.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\chromosome.dir\build.make CMakeFiles/chromosome.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+Chromosome.cpp.obj:
+	$(MAKE) -f CMakeFiles\chromosome.dir\build.make CMakeFiles/chromosome.dir/Chromosome.cpp.obj
+.PHONY : Chromosome.cpp.obj
 
-main.i: main.cpp.i
+Chromosome.i: Chromosome.cpp.i
 
-.PHONY : main.i
+.PHONY : Chromosome.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\chromosome.dir\build.make CMakeFiles/chromosome.dir/main.cpp.i
-.PHONY : main.cpp.i
+Chromosome.cpp.i:
+	$(MAKE) -f CMakeFiles\chromosome.dir\build.make CMakeFiles/chromosome.dir/Chromosome.cpp.i
+.PHONY : Chromosome.cpp.i
 
-main.s: main.cpp.s
+Chromosome.s: Chromosome.cpp.s
 
-.PHONY : main.s
+.PHONY : Chromosome.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\chromosome.dir\build.make CMakeFiles/chromosome.dir/main.cpp.s
-.PHONY : main.cpp.s
+Chromosome.cpp.s:
+	$(MAKE) -f CMakeFiles\chromosome.dir\build.make CMakeFiles/chromosome.dir/Chromosome.cpp.s
+.PHONY : Chromosome.cpp.s
+
+Chromosome_binary.obj: Chromosome_binary.cpp.obj
+
+.PHONY : Chromosome_binary.obj
+
+# target to build an object file
+Chromosome_binary.cpp.obj:
+	$(MAKE) -f CMakeFiles\chromosome_binary.dir\build.make CMakeFiles/chromosome_binary.dir/Chromosome_binary.cpp.obj
+.PHONY : Chromosome_binary.cpp.obj
+
+Chromosome_binary.i: Chromosome_binary.cpp.i
+
+.PHONY : Chromosome_binary.i
+
+# target to preprocess a source file
+Chromosome_binary.cpp.i:
+	$(MAKE) -f CMakeFiles\chromosome_binary.dir\build.make CMakeFiles/chromosome_binary.dir/Chromosome_binary.cpp.i
+.PHONY : Chromosome_binary.cpp.i
+
+Chromosome_binary.s: Chromosome_binary.cpp.s
+
+.PHONY : Chromosome_binary.s
+
+# target to generate assembly for a file
+Chromosome_binary.cpp.s:
+	$(MAKE) -f CMakeFiles\chromosome_binary.dir\build.make CMakeFiles/chromosome_binary.dir/Chromosome_binary.cpp.s
+.PHONY : Chromosome_binary.cpp.s
 
 # Help Target
 help:
@@ -157,10 +197,14 @@ help:
 	@echo ... depend
 	@echo ... rebuild_cache
 	@echo ... chromosome
+	@echo ... chromosome_binary
 	@echo ... edit_cache
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... Chromosome.obj
+	@echo ... Chromosome.i
+	@echo ... Chromosome.s
+	@echo ... Chromosome_binary.obj
+	@echo ... Chromosome_binary.i
+	@echo ... Chromosome_binary.s
 .PHONY : help
 
 

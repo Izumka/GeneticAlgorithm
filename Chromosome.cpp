@@ -134,7 +134,7 @@ public:
     }
 };
 
-//int main() {
+int main() {
 //    vector<int> x = {0,1,2,3,4};
 //    Chromosome lol = Chromosome(10,fit_func,x);
 //    Chromosome lal = Chromosome(5,fit_func,x);
@@ -150,5 +150,5 @@ public:
 //    for(int i:v1){
 //        cout<<i<<endl;
 //    }
-//    return 0;
-//}
+    return 0;
+}

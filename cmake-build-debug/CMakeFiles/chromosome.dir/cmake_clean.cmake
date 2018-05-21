@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/chromosome.dir/main.cpp.obj"
+  "CMakeFiles/chromosome.dir/Chromosome.cpp.obj"
   "chromosome.pdb"
   "chromosome.exe"
   "chromosome.exe.manifest"

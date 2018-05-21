@@ -56,38 +56,38 @@ include CMakeFiles/chromosome.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/chromosome.dir/flags.make
 
-CMakeFiles/chromosome.dir/main.cpp.obj: CMakeFiles/chromosome.dir/flags.make
-CMakeFiles/chromosome.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Oles\CLionProjects\chromosome\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chromosome.dir/main.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-6~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\chromosome.dir\main.cpp.obj -c C:\Users\Oles\CLionProjects\chromosome\main.cpp
+CMakeFiles/chromosome.dir/Chromosome.cpp.obj: CMakeFiles/chromosome.dir/flags.make
+CMakeFiles/chromosome.dir/Chromosome.cpp.obj: ../Chromosome.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Oles\CLionProjects\chromosome\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chromosome.dir/Chromosome.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-6~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\chromosome.dir\Chromosome.cpp.obj -c C:\Users\Oles\CLionProjects\chromosome\Chromosome.cpp
 
-CMakeFiles/chromosome.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chromosome.dir/main.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-6~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Oles\CLionProjects\chromosome\main.cpp > CMakeFiles\chromosome.dir\main.cpp.i
+CMakeFiles/chromosome.dir/Chromosome.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chromosome.dir/Chromosome.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-6~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Oles\CLionProjects\chromosome\Chromosome.cpp > CMakeFiles\chromosome.dir\Chromosome.cpp.i
 
-CMakeFiles/chromosome.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chromosome.dir/main.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-6~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Oles\CLionProjects\chromosome\main.cpp -o CMakeFiles\chromosome.dir\main.cpp.s
+CMakeFiles/chromosome.dir/Chromosome.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chromosome.dir/Chromosome.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-6~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Oles\CLionProjects\chromosome\Chromosome.cpp -o CMakeFiles\chromosome.dir\Chromosome.cpp.s
 
-CMakeFiles/chromosome.dir/main.cpp.obj.requires:
+CMakeFiles/chromosome.dir/Chromosome.cpp.obj.requires:
 
-.PHONY : CMakeFiles/chromosome.dir/main.cpp.obj.requires
+.PHONY : CMakeFiles/chromosome.dir/Chromosome.cpp.obj.requires
 
-CMakeFiles/chromosome.dir/main.cpp.obj.provides: CMakeFiles/chromosome.dir/main.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\chromosome.dir\build.make CMakeFiles/chromosome.dir/main.cpp.obj.provides.build
-.PHONY : CMakeFiles/chromosome.dir/main.cpp.obj.provides
+CMakeFiles/chromosome.dir/Chromosome.cpp.obj.provides: CMakeFiles/chromosome.dir/Chromosome.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\chromosome.dir\build.make CMakeFiles/chromosome.dir/Chromosome.cpp.obj.provides.build
+.PHONY : CMakeFiles/chromosome.dir/Chromosome.cpp.obj.provides
 
-CMakeFiles/chromosome.dir/main.cpp.obj.provides.build: CMakeFiles/chromosome.dir/main.cpp.obj
+CMakeFiles/chromosome.dir/Chromosome.cpp.obj.provides.build: CMakeFiles/chromosome.dir/Chromosome.cpp.obj
 
 
 # Object files for target chromosome
 chromosome_OBJECTS = \
-"CMakeFiles/chromosome.dir/main.cpp.obj"
+"CMakeFiles/chromosome.dir/Chromosome.cpp.obj"
 
 # External object files for target chromosome
 chromosome_EXTERNAL_OBJECTS =
 
-chromosome.exe: CMakeFiles/chromosome.dir/main.cpp.obj
+chromosome.exe: CMakeFiles/chromosome.dir/Chromosome.cpp.obj
 chromosome.exe: CMakeFiles/chromosome.dir/build.make
 chromosome.exe: CMakeFiles/chromosome.dir/linklibs.rsp
 chromosome.exe: CMakeFiles/chromosome.dir/objects1.rsp
@@ -100,7 +100,7 @@ CMakeFiles/chromosome.dir/build: chromosome.exe
 
 .PHONY : CMakeFiles/chromosome.dir/build
 
-CMakeFiles/chromosome.dir/requires: CMakeFiles/chromosome.dir/main.cpp.obj.requires
+CMakeFiles/chromosome.dir/requires: CMakeFiles/chromosome.dir/Chromosome.cpp.obj.requires
 
 .PHONY : CMakeFiles/chromosome.dir/requires
 
