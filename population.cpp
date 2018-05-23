@@ -12,17 +12,24 @@
 using namespace std;
 
 
-
-
+template<typename n_type, typename f_type>
+void Population<n_type, f_type>::generate_init()
+{
+    population_set = generate_subset(size);
+}
 
 template<typename n_type, typename f_type>
-void Population<n_type, f_type>::generate_subset(int size)
+vector<Chromosome> Population<n_type, f_type>::generate_subset(int size)
 {
+    vector<Chromosome> population;
+
     for(int i = 0; i < size; i++)
     {
-        population_set[i] = Chromosome(genes_length, fitnes_fun);
+        population.push_back(Chromosome(genes_length, fitnes_fun));
     }
     calc_fithes();
+
+    return population;
 }
 
 template<typename n_type, typename f_type>
@@ -36,15 +43,13 @@ void Population<n_type, f_type>::calc_fit(int start, int end)
 
 
 template<typename n_type, typename f_type>
-void Population<n_type, f_type>::calc_fithes(){
-
+void Population<n_type, f_type>::calc_fithes()
+{
     vector<thread> threads;
-    
+//
     int start = 0;
     int end = 0;
-
-
-
+//
     for (int i = 1; i <= theard_num; i++)
     {
         if(i == theard_num)
@@ -58,15 +63,10 @@ void Population<n_type, f_type>::calc_fithes(){
         threads.push_back(thread(calc_fit, start, end));
         start = end;
     }
-
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 4; i++)
+    {
         threads[i].join();
     }
-
-
-
-
-
 }
 
 template<typename n_type, typename f_type>
@@ -78,8 +78,8 @@ vector<double> Population<n_type, f_type>::calc_prob()
     {
         val_arr[i] = population_set[i].fitness;
     }
+
     double sum = val_arr.sum();
-//
     valarray<double> perc_arr(val_arr.size());
 //
     for (int j = 0; j < val_arr.size(); j++)
@@ -118,9 +118,9 @@ void Population<n_type, f_type>::prob_mutation()
 {
     for (Chromosome chromosome : population_set)
     {
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_real_distribution<> dis(0, 1);
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_real_distribution<> dis(0, 1);
 //
         if(dis(gen)< prob_mut)
         {
@@ -138,16 +138,12 @@ void Population<n_type, f_type>::refresh_nofit()
 //
     valarray<Chromosome> to_sort_arr(population_set.size());
 //
-//    for (int i = 0; i < population_set.size(); i++) {
-//        to_sort_arr[i] = population_set[i];
-//    }
-//
     sort(population_set.begin(), population_set.end(), wayToSort);
 //
     Chromosome best = population_set[0];
     Chromosome worst = population_set[1];
 //
-    vector<Chromosome> sub_set = gen(lethul_num);
+    vector<Chromosome> sub_set = generate_subset(lethul_num);
     vector<Chromosome> one;
 //
 
@@ -162,14 +158,3 @@ void Population<n_type, f_type>::refresh_nofit()
     population_set = one;
 }
 
-template<typename n_type, typename f_type>
-vector<Chromosome> Population<n_type, f_type>::gen(int leght)
-{
-    vector<Chromosome> set(leght);
-//
-    for (int i = 0; i < leght; i++)
-    {
-        set[i] = Chromosome(getGenes_length(), getFitnes_fun());
-    }
-    return set;
-}

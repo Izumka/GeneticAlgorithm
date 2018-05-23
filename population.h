@@ -21,6 +21,8 @@ private:
     double prob_mut;
     double lethal;
     int theard_num;
+    double best_fit;
+    double worst_fit;
 
 // Additional data for logic
 
@@ -41,8 +43,9 @@ public:
         prob_mut = 0.05;
         lethal = 0.2;
     }
+    void generate_init();
 
-    void generate_subset(int size);
+    std::vector<Chromosome> generate_subset(int size);
 
     std::vector<double > calc_prob();
 
@@ -51,8 +54,6 @@ public:
     void prob_mutation();
 
     void refresh_nofit();
-
-    vector<Chromosome> gen(int leght);
 
     vector<Chromosome> getPopulation_set() const {
         return population_set;
@@ -65,6 +66,22 @@ public:
 
     double getCross_prob() const {
         return cross_prob;
+    }
+
+    double getBest_fit() const {
+        return best_fit;
+    }
+
+    void setBest_fit(double best_fit) {
+        Population::best_fit = best_fit;
+    }
+
+    double getWorst_fit() const {
+        return worst_fit;
+    }
+
+    void setWorst_fit(double worst_fit) {
+        Population::worst_fit = worst_fit;
     }
 
     double getProb_mut() const {
@@ -108,7 +125,6 @@ public:
         std::cout << "Chromosome is dead ;=)" << endl;
     }
 };
-
 
 #endif //LETS_DO_THAT_POPULATION_H
 
