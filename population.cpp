@@ -11,26 +11,29 @@ using namespace std;
 
 template<typename n_type, typename f_type>
 
-void Population<n_type, f_type>::generate_subset(int size) {
-//
-    for(int i = 0; i < size; i++){
+void Population<n_type, f_type>::generate_subset(int size)
+{
+    for(int i = 0; i < size; i++)
+    {
         population_set[i] = Chromosome(size, fitnes_fun);
     }
 }
 
 template<typename n_type, typename f_type>
-vector<double> Population<n_type, f_type>::calc_prob() {
-//
+vector<double> Population<n_type, f_type>::calc_prob()
+{
     valarray<double> val_arr(population_set.size());
 //
-    for (int i = 0; i < population_set.size(); i++) {
+    for (int i = 0; i < population_set.size(); i++)
+    {
         val_arr[i] = population_set[i].fitness;
     }
     double sum = val_arr.sum();
 //
     valarray<double> perc_arr(val_arr.size());
 //
-    for (int j = 0; j < val_arr.size(); j++) {
+    for (int j = 0; j < val_arr.size(); j++)
+    {
         perc_arr[j] = val_arr[j]/sum;
     }
     perc_arr[0] += 1 - perc_arr.sum();
@@ -41,8 +44,8 @@ vector<double> Population<n_type, f_type>::calc_prob() {
 }
 
 template<typename n_type, typename f_type>
-void Population<n_type, f_type>::prob_crossover() {
-//
+void Population<n_type, f_type>::prob_crossover()
+{
     const vector<double> probabilities = calc_prob();
 //
     vector<double> vec(calc_prob().size());
@@ -58,16 +61,17 @@ void Population<n_type, f_type>::prob_crossover() {
 }
 
 template<typename n_type, typename f_type>
-void Population<n_type, f_type>::prob_mutation() {
-//
-    for (Chromosome chromosome : population_set) {
-//
+void Population<n_type, f_type>::prob_mutation()
+{
+    for (Chromosome chromosome : population_set)
+    {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_real_distribution<> dis(0, 1);
 //
-        if(dis(gen)< prob_mut){
-//            chromosome.mutate();
+        if(dis(gen)< prob_mut)
+        {
+            chromosome.mutate();
         }
     }
 }
@@ -75,9 +79,10 @@ void Population<n_type, f_type>::prob_mutation() {
 double wayToSort(Chromosome chromosome) { return chromosome.fitness;}
 
 template<typename n_type, typename f_type>
-void Population<n_type, f_type>::refresh_nofit() {
+void Population<n_type, f_type>::refresh_nofit()
+{
     auto lethul_num = floor(size * lethal);
-
+//
     valarray<Chromosome> to_sort_arr(population_set.size());
 //
 //    for (int i = 0; i < population_set.size(); i++) {
@@ -92,19 +97,24 @@ void Population<n_type, f_type>::refresh_nofit() {
     vector<Chromosome> sub_set = gen(lethul_num);
     vector<Chromosome> one;
 //
-    for (int i = 0; i < population_set.size() - lethul_num ; i++) {
+    for (int i = 0; i < population_set.size() - lethul_num ; i++)
+    {
         one[i] = population_set[i];
     }
-    for (int j = (population_set.size() - lethul_num), b =0; j < population_set.size() ; j++, b++) {
+    for (int j = (population_set.size() - lethul_num), b =0; j < population_set.size() ; j++, b++)
+    {
         one[j] = sub_set[b];
     }
     population_set = one;
 }
 
 template<typename n_type, typename f_type>
-vector<Chromosome> Population<n_type, f_type>::gen(int leght) {
+vector<Chromosome> Population<n_type, f_type>::gen(int leght)
+{
     vector<Chromosome> set(leght);
-    for (int i = 0; i < leght; i++) {
+//
+    for (int i = 0; i < leght; i++)
+    {
         set[i] = Chromosome(leght, getFitnes_fun());
     }
     return set;

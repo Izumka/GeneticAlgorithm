@@ -46,8 +46,6 @@ public:
 
     void refresh_nofit();
 
-
-
     vector<Chromosome> gen(int leght);
 
     vector<Chromosome> getPopulation_set() const {
