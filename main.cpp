@@ -1,20 +1,40 @@
 #include <iostream>
-#include <chromosome.h>
-#include <population.h>
-#include <vector>
-#include <valarray>
-#include "population.h"
 
+#include <random>
+#include <vector>
+#include <algorithm>
+#include <valarray>
+#include <thread>
+//#include "chromosome.h"
+//#include "population.h"
+using std::vector;
 using namespace std;
 
+void func(int i, int& res){
+//    for (int j = 0; j < 100; j++) {
+//        std::cout << "index: " << i << std::endl;
+//    }
+
+    res = i+2;
+}
+
 int main() {
+    vector<std::thread> threads;
+    vector<int> results{2};
 
-//    Population population = new Population(genes_length=5, num_type="int", fitness_fun=fit, size=10);
-//
-//    double arr[5] = {1,1,1,2,3};
+    for (int i = 0; i < 2; i++) {
+        threads.push_back(std::thread(func, i, results[i]));
+    }
 
+    for (int i = 0; i < 2; i++) {
+        threads[i].join();
+    }
 
-    return EXIT_SUCCESS;
+    for (int i = 0; i < 2; i++) {
+        cout << results[i] << endl;
+    }
+
+    return 0;
 }
 
 double fit(vector<int>& lst){

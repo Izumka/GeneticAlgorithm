@@ -31,24 +31,22 @@ iterator
 -
 algorithm
 -
-cstdlib
--
 time.h
 -
 
 /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/main.cpp
 iostream
 -
-chromosome.h
--
-population.h
+random
 -
 vector
 -
+algorithm
+-
 valarray
 -
-population.h
-/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.h
+thread
+-
 
 /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.cpp
 chromosome.h
@@ -66,6 +64,10 @@ cmath
 stdlib.h
 -
 time.h
+-
+algorithm
+-
+thread
 -
 
 /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.h

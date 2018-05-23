@@ -66,7 +66,6 @@ public:
 
             this->genes = x;
         }
-        this->fitness = fitness_func((*this).genes);
     }
 
     Chromosome crossover(Chromosome *other_chrom){
@@ -119,6 +118,10 @@ public:
         Chromosome child_1 = Chromosome(new_length, new_fitness_func, new_genes_1);
         Chromosome child_2 = Chromosome(new_length, new_fitness_func, new_genes_2);
         return(child_1,child_2);
+    }
+
+    void get_fitness(){
+        this->fitness = this->fitness_func((*this).genes);
     }
 
     void mutate(){

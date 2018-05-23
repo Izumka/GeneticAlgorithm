@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/chromosome.dir/main.cpp.o CMakeFiles/chromosome.dir/population.cpp.o  -o chromosome 
+/usr/bin/c++  -g   CMakeFiles/chromosome.dir/main.cpp.o CMakeFiles/chromosome.dir/population.cpp.o  -o chromosome -lpthread 

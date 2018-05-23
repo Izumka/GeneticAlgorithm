@@ -12,7 +12,7 @@ class Population {
 private:
     int genes_length;
     n_type num_type;
-    function<f_type(vector<f_type>)> fitnes_fun ;
+    function<f_type(std::vector<f_type>)> fitnes_fun ;
     int size;
 
 // Default config]
@@ -20,17 +20,23 @@ private:
     double cross_prob;
     double prob_mut;
     double lethal;
+    int theard_num;
 
 // Additional data for logic
 
     std::vector<Chromosome> population_set{size};
 
+    void calc_fithes();
+
+    void calc_fit(int start, int end);
+
 
 public:
 
-    Population(int genes_length, n_type num_type, function<f_type(vector<f_type>)> fitnes_fun, int size) : genes_length(genes_length),
+    Population(int genes_length, n_type num_type, function<f_type(std::vector<f_type>)> fitnes_fun, int size, int theard_num=1) : genes_length(genes_length),
                                                                                  num_type(num_type),
-                                                                                 fitnes_fun(fitnes_fun), size(size) {
+                                                                                 fitnes_fun(fitnes_fun), size(size), theard_num(theard_num)
+    {
         cross_prob = 0.4;
         prob_mut = 0.05;
         lethal = 0.2;
