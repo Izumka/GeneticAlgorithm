@@ -17,14 +17,15 @@ void Population::generate_init()
 
     cout << "1: Checking generate_init"<< endl;
     population_set = generate_subset(size);
+    calculation_on_set();
     cout << "1: OK"<< endl;
 }
 
-vector<Chromosome> Population::generate_subset(int size)
-{
+vector<Chromosome> Population::generate_subset(int size){
     cout << "2: Checking generate_subset"<< endl;
     vector<Chromosome> population;
     cout << "2.1: Init chromosome vector"<< endl;
+
 
 
     for(int i = 0; i < size; i++)
@@ -32,11 +33,14 @@ vector<Chromosome> Population::generate_subset(int size)
         population.push_back(Chromosome(genes_length, fitnes_fun));
     }
     cout << "2.2: Full the chromosome vector"<< endl;
+    return population;
+}
 
+
+void Population::calculation_on_set()
+{
     calc_fithes();
     cout << "2.3.: Calc the chromosome vector"<< endl;
-
-    return population;
 }
 
 void Population::calc_fit(int start, int end)
@@ -92,7 +96,7 @@ void Population::calc_fithes()
     else
     {
         cout << "1 thread"<< endl;
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < population_set.size(); i++)
         {
             cout << i << endl;
             population_set[i].calc_fitnes();

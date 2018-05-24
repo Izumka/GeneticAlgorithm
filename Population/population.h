@@ -15,18 +15,17 @@ class Population {
 private:
     int genes_length;
     int num_type;
-    std::function<double (std::vector<int>)> fitnes_fun ;
-    int size;
 
+    int size;
 // Default config]
 
     double cross_prob;
+
     double prob_mut;
     double lethal;
     int theard_num;
     double best_fit;
     double worst_fit;
-
 // Additional data for logic
 
     std::vector<Chromosome> population_set;
@@ -35,15 +34,22 @@ private:
 
     void calc_fit(int start, int end);
 
+    void calculation_on_set();
 
 public:
 
-    Population(int genes_length, int num_type, std::function<double (std::vector<int>)> fitnesfun, int size, int theard_num=1) : genes_length(genes_length),
+
+//    double (*fitnes_fun)(std::vector<int>);
+
+    std::function<double(std::vector<int>)> fitnes_fun;
+
+
+    Population(int genes_length, int num_type, const std::function<double(std::vector<int>)> &fit_func, int size, int theard_num=1) : genes_length(genes_length),
                                                                                  num_type(num_type),
-                                                                                  size(size), theard_num(theard_num)
+                                                                                  size(size), theard_num(theard_num),fitnes_fun(fit_func)
     {
         std::cout << "Create population" << std::endl;
-        fitnes_fun = fitnesfun;
+        ;
         cross_prob = 0.4;
         prob_mut = 0.05;
         lethal = 0.2;

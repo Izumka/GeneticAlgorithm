@@ -18,9 +18,9 @@
 
 using namespace std;
 
-void Chromosome::Init(int len, std::function<double (std::vector<int>)> fitfunc, std::vector<int> gene_vect) {
+void Chromosome::Init(int len, std::vector<int> gene_vect) {
     this->length = len;
-    this->fitness_func = fitfunc;
+//    fitness_func = fit_fumc;
     if(gene_vect.size()){
         this->genes = gene_vect;
     }else{
@@ -81,10 +81,11 @@ Chromosome Chromosome::crossover(Chromosome *other_chrom) {
     }
 
     int new_length = (*this).length;
-    function<int(vector<int>)> new_fitness_func = (*this).fitness_func;
+//    double (*new_fit_fumc)(std::vector<int>)();
+//    new_fit_fumc = fitness_func;
 
-    Chromosome child_1 = Chromosome(new_length, new_fitness_func, new_genes_1);
-    Chromosome child_2 = Chromosome(new_length, new_fitness_func, new_genes_2);
+    Chromosome child_1 = Chromosome(new_length, fitness_func, new_genes_1);
+    Chromosome child_2 = Chromosome(new_length, fitness_func, new_genes_2);
     return(child_1,child_2);
 }
 
@@ -99,7 +100,7 @@ void Chromosome::mutate() {
 void Chromosome::calc_fitnes() {
     cout << "here2"<< endl;
 
-    this->fitness = this->fitness_func((*this).genes);
+    fitness = fitness_func(genes);
 
     cout << "here3"<< endl;
 }

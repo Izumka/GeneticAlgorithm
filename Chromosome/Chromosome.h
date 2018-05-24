@@ -9,15 +9,19 @@
 class Chromosome {
 private:
     int length;
-    std::function<double (std::vector<int>)> fitness_func;
-    std::vector<int> genes;
 
-    void Init(int len, std::function<double (std::vector<int>)> fitfunc, std::vector<int> gene_vect);
+    std::vector<int> genes;
+    void Init(int len, std::vector<int> gene_vect);
+
 public:
+    std::function<double(std::vector<int>)> fitness_func;
+
+//    double (*fitness_func)(std::vector<int>);
     double fitness;
 
-    Chromosome(int len, std::function<double (std::vector<int>)> fitfunc ,std::vector<int> gene_vect=std::vector<int>{}){
-        Init(len, fitfunc, gene_vect);
+    Chromosome(int len,  const std::function<double(std::vector<int>)>& fit_fumc,std::vector<int> gene_vect=std::vector<int>{}){
+        fitness_func = fit_fumc;
+        Init(len, gene_vect);
     }
 
     Chromosome crossover(Chromosome *other_chrom);
@@ -34,13 +38,13 @@ public:
         Chromosome::length = length;
     }
 
-    const std::function<double (std::vector<int>)> &getFitness_func() const {
-        return fitness_func;
-    }
+//    const std::function<double (std::vector<int>)> &getFitness_func() const {
+//        return fitness_func;
+//    }
 
-    void setFitness_func(const std::function<double (std::vector<int>)> &fitness_func) {
-        Chromosome::fitness_func = fitness_func;
-    }
+//    void setFitness_func(const std::function<double (std::vector<int>)> &fitness_func) {
+//        Chromosome::fitness_func = fitness_func;
+//    }
 
     const std::vector<int> &getGenes() const {
         return genes;

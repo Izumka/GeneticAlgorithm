@@ -90,8 +90,6 @@ iostream
 vector
 -
 
-/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/chromosome.h
-
 /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.cpp
 functions.h
 /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.h
@@ -167,8 +165,8 @@ valarray
 -
 thread
 -
-Chromosome/chromosome.h
-/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/chromosome.h
+Chromosome/Chromosome.h
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.h
 Population/population.h
 /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.h
 

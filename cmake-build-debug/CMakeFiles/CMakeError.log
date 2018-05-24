@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_34b08/fast"
+/usr/bin/make -f CMakeFiles/cmTC_34b08.dir/build.make CMakeFiles/cmTC_34b08.dir/build
+make[1]: входимо до каталогу «/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_34b08.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_34b08.dir/CheckSymbolExists.c.o   -c /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_34b08
+/home/izu_um/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.4668.70/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34b08.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_34b08.dir/CheckSymbolExists.c.o  -o cmTC_34b08 
+CMakeFiles/cmTC_34b08.dir/CheckSymbolExists.c.o: у функції «main»:
+CheckSymbolExists.c:(.text+0x16): невизначене посилання «pthread_create»
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_34b08.dir/build.make:97: спроба виконання рецепта для мети «cmTC_34b08» зазнала невдачі
+make[1]: *** [cmTC_34b08] Помилка 1
+make[1]: Залишаю каталог "/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/CMakeTmp"
+Makefile:126: спроба виконання рецепта для мети «cmTC_34b08/fast» зазнала невдачі
+make: *** [cmTC_34b08/fast] Помилка 2
+
+File /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dac76/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dac76.dir/build.make CMakeFiles/cmTC_dac76.dir/build
+make[1]: входимо до каталогу «/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_dac76.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_dac76.dir/CheckFunctionExists.c.o   -c /home/izu_um/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.4668.70/bin/cmake/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dac76
+/home/izu_um/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.4668.70/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dac76.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_dac76.dir/CheckFunctionExists.c.o  -o cmTC_dac76 -lpthreads 
+/usr/bin/ld: не вдалося знайти -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_dac76.dir/build.make:97: спроба виконання рецепта для мети «cmTC_dac76» зазнала невдачі
+make[1]: *** [cmTC_dac76] Помилка 1
+make[1]: Залишаю каталог "/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles/CMakeTmp"
+Makefile:126: спроба виконання рецепта для мети «cmTC_dac76/fast» зазнала невдачі
+make: *** [cmTC_dac76/fast] Помилка 2
+
+
