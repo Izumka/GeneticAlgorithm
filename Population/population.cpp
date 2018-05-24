@@ -14,54 +14,89 @@ using namespace std;
 
 void Population::generate_init()
 {
+
+    cout << "1: Checking generate_init"<< endl;
     population_set = generate_subset(size);
+    cout << "1: OK"<< endl;
 }
 
 vector<Chromosome> Population::generate_subset(int size)
 {
+    cout << "2: Checking generate_subset"<< endl;
     vector<Chromosome> population;
+    cout << "2.1: Init chromosome vector"<< endl;
+
 
     for(int i = 0; i < size; i++)
     {
         population.push_back(Chromosome(genes_length, fitnes_fun));
     }
+    cout << "2.2: Full the chromosome vector"<< endl;
+
     calc_fithes();
+    cout << "2.3.: Calc the chromosome vector"<< endl;
 
     return population;
 }
 
 void Population::calc_fit(int start, int end)
 {
+    cout << "here"<< endl;
+    cout << start<< endl;
+    cout << end << endl;
+
     for (int i = start; i <= end; i++)
     {
+        cout << i << endl;
         population_set[i].calc_fitnes();
+        cout<< i << population_set[i].getFitness() << endl;
     }
 }
 
 
 void Population::calc_fithes()
 {
+    cout << "2.3.1: Checking cal_fitnes"<< endl;
     vector<thread> threads;
 //
     int start = 0;
     int end = 0;
-//
-    for (int i = 1; i <= theard_num; i++)
-    {
-        if(i == theard_num)
+
+
+    cout << "2.3.2: Checking ..."<< endl;
+    if(theard_num != 1){
+        for (int i = 1; i <= theard_num; i++)
         {
-            end = size;
+
+            if(i == theard_num)
+            {
+                cout << "num of thread = "<< i<< endl;
+                end = size;
+            }
+            else
+            {
+            end += size/theard_num ;
+            }
+            threads.push_back(thread(&Population::calc_fit,this, start, end));
+            start = end;
+            cout << "Add thread"<< endl;
         }
-        else
+        cout << "Checking...2"<< endl;
+        for (int i = 0; i < theard_num; i++)
         {
-        end += size/theard_num ;
+            cout << "Checking join"<< endl;
+            threads[i].join();
+            cout << "Checking join"<< endl;
         }
-        threads.push_back(thread(&Population::calc_fit,this, start, end));
-        start = end;
     }
-    for (int i = 0; i < 4; i++)
+    else
     {
-        threads[i].join();
+        cout << "1 thread"<< endl;
+        for (int i = 0; i < size; i++)
+        {
+            cout << i << endl;
+            population_set[i].calc_fitnes();
+        }
     }
 }
 
@@ -122,10 +157,10 @@ void Population::prob_mutation()
     }
 }
 
-bool Population::wayToSort(int i,int j)
-{
-    return (population_set[i].getFitness()<population_set[j].getFitness());
-}
+//bool Population::wayToSort(int i,int j)
+//{
+//    return (population_set[i].getFitness()<population_set[j].getFitness());
+//}
 
 void Population::refresh_nofit()
 {

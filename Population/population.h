@@ -42,15 +42,19 @@ public:
                                                                                  num_type(num_type),
                                                                                   size(size), theard_num(theard_num)
     {
+        std::cout << "Create population" << std::endl;
         fitnes_fun = fitnesfun;
         cross_prob = 0.4;
         prob_mut = 0.05;
         lethal = 0.2;
+        std::cout << "" << std::endl;
+
+
     }
 
     void generate_init();
 
-    bool wayToSort(int i,int j);
+//    bool wayToSort(int i,int j);
 
     std::vector<Chromosome> generate_subset(int size);
 
