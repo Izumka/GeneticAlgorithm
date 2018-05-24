@@ -6,5 +6,6 @@ set(CMAKE_CXX_STANDARD 14)
 
 
 
-add_executable(chromosome main.cpp chromosome.h population.cpp population.h)
+add_executable(chromosome main.cpp Population/population.cpp Population/population.h Chromosome/Chromosome.cpp Chromosome/Chromosome.h
+        Chromosome/Chromosome_binary.cpp Chromosome/Chromosome_binary.h Chromosome/functions.cpp Chromosome/functions.h)
 target_link_libraries(chromosome ${CMAKE_THREAD_LIBS_INIT})

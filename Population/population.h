@@ -2,17 +2,20 @@
 #define CHROMOSOME_POPULATION_H
 
 #include <iostream>
+#include <functional>
+#include <vector>
+#include "../Chromosome/Chromosome.h"
+
 //#pragma once
 
-template <typename n_type, typename f_type>
 
 
 class Population {
 
 private:
     int genes_length;
-    n_type num_type;
-    function<f_type(std::vector<f_type>)> fitnes_fun ;
+    int num_type;
+    std::function<double (std::vector<int>)> fitnes_fun ;
     int size;
 
 // Default config]
@@ -26,7 +29,7 @@ private:
 
 // Additional data for logic
 
-    std::vector<Chromosome> population_set{size};
+    std::vector<Chromosome> population_set;
 
     void calc_fithes();
 
@@ -35,15 +38,19 @@ private:
 
 public:
 
-    Population(int genes_length, n_type num_type, function<f_type(std::vector<f_type>)> fitnes_fun, int size, int theard_num=1) : genes_length(genes_length),
+    Population(int genes_length, int num_type, std::function<double (std::vector<int>)> fitnesfun, int size, int theard_num=1) : genes_length(genes_length),
                                                                                  num_type(num_type),
-                                                                                 fitnes_fun(fitnes_fun), size(size), theard_num(theard_num)
+                                                                                  size(size), theard_num(theard_num)
     {
+        fitnes_fun = fitnesfun;
         cross_prob = 0.4;
         prob_mut = 0.05;
         lethal = 0.2;
     }
+
     void generate_init();
+
+    bool wayToSort(int i,int j);
 
     std::vector<Chromosome> generate_subset(int size);
 
@@ -55,11 +62,11 @@ public:
 
     void refresh_nofit();
 
-    vector<Chromosome> getPopulation_set() const {
+    std::vector<Chromosome> getPopulation_set() const {
         return population_set;
     }
 
-    void setPopulation_set(vector<Chromosome> population_set) {
+    void setPopulation_set(std::vector<Chromosome> population_set) {
         Population::population_set = population_set;
     }
 
@@ -100,11 +107,11 @@ public:
         Population::genes_length = genes_length;
     }
 
-    n_type getNum_type() const {
+    int getNum_type() const {
         return num_type;
     }
 
-    void setNum_type(n_type num_type) {
+    void setNum_type(int num_type) {
         Population::num_type = num_type;
     }
 
@@ -117,12 +124,12 @@ public:
         Population::size = size;
     }
 
-    const function<f_type(vector<f_type>)> &getFitnes_fun() const {
-        return fitnes_fun;
-    }
+//    const std::function<double (std::vector<int>)> &getFitnes_fun() const {
+//        return fitnes_fun;
+//    }
 
     virtual ~Population() {
-        std::cout << "Chromosome is dead ;=)" << endl;
+        std::cout << "Chromosome is dead ;=)" << std::endl;
     }
 };
 

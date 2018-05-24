@@ -1,4 +1,4 @@
-#include "chromosome.h"
+#include "../Chromosome/Chromosome.h"
 #include "population.h"
 #include <string>
 #include <vector>
@@ -9,17 +9,15 @@
 #include <algorithm>
 #include <thread>
 
+//using namespace std::vector;
 using namespace std;
 
-
-template<typename n_type, typename f_type>
-void Population<n_type, f_type>::generate_init()
+void Population::generate_init()
 {
     population_set = generate_subset(size);
 }
 
-template<typename n_type, typename f_type>
-vector<Chromosome> Population<n_type, f_type>::generate_subset(int size)
+vector<Chromosome> Population::generate_subset(int size)
 {
     vector<Chromosome> population;
 
@@ -32,18 +30,16 @@ vector<Chromosome> Population<n_type, f_type>::generate_subset(int size)
     return population;
 }
 
-template<typename n_type, typename f_type>
-void Population<n_type, f_type>::calc_fit(int start, int end)
+void Population::calc_fit(int start, int end)
 {
-    for (int i = start; i < end; i++)
+    for (int i = start; i <= end; i++)
     {
-        population_set[i].get_fitness();
+        population_set[i].calc_fitnes();
     }
 }
 
 
-template<typename n_type, typename f_type>
-void Population<n_type, f_type>::calc_fithes()
+void Population::calc_fithes()
 {
     vector<thread> threads;
 //
@@ -54,13 +50,13 @@ void Population<n_type, f_type>::calc_fithes()
     {
         if(i == theard_num)
         {
-            end = population_set.size();
+            end = size;
         }
         else
         {
         end += size/theard_num ;
         }
-        threads.push_back(thread(calc_fit, start, end));
+        threads.push_back(thread(&Population::calc_fit,this, start, end));
         start = end;
     }
     for (int i = 0; i < 4; i++)
@@ -69,10 +65,9 @@ void Population<n_type, f_type>::calc_fithes()
     }
 }
 
-template<typename n_type, typename f_type>
-vector<double> Population<n_type, f_type>::calc_prob()
+vector<double> Population::calc_prob()
 {
-    valarray<double> val_arr(population_set.size());
+    std::valarray<double> val_arr(population_set.size());
 //
     for (int i = 0; i < population_set.size(); i++)
     {
@@ -88,33 +83,31 @@ vector<double> Population<n_type, f_type>::calc_prob()
     }
     perc_arr[0] += 1 - perc_arr.sum();
 //
-    vector<double> ended{perc_arr.size()};
+    vector<double> ended(perc_arr.size());
 //
     return ended;
 }
 
-template<typename n_type, typename f_type>
-void Population<n_type, f_type>::prob_crossover()
+void Population::prob_crossover()
 {
-    const vector<double> probabilities = calc_prob();
-
-    vector<double> vec(calc_prob().size());
-
+//    const vector<double> probabilities = calc_prob();
+//
+//    vector<double> vec(calc_prob().size());
+//
 //    const vector<double> samples{ 1, 2, 3, 4, 5, 6, 7 };
 //    const vector<double> probabilities{ 0.1, 0.2, 0.1, 0.5, 0,1 };
-
-    std::default_random_engine generator;
-    std::discrete_distribution<int> distribution(probabilities.begin(), probabilities.end());
-
-    vector<int> indices(vec.size());
-    generate(indices.begin(), indices.end(), [&generator, &distribution]() { cout<< distribution(generator); });
+//
+//    std::default_random_engine generator;
+//    std::discrete_distribution<int> distribution(probabilities.begin(), probabilities.end());
+//
+//    vector<int> indices(vec.size());
+//    generate(indices.begin(), indices.end(), [&generator, &distribution]() { cout<< distribution(generator); });
 
 //    transform(indices.begin(), indices.end(), vec.begin(), [population_set](int index) { population_set[index].});
 }
 
 
-template<typename n_type, typename f_type>
-void Population<n_type, f_type>::prob_mutation()
+void Population::prob_mutation()
 {
     for (Chromosome chromosome : population_set)
     {
@@ -129,19 +122,43 @@ void Population<n_type, f_type>::prob_mutation()
     }
 }
 
-double wayToSort(Chromosome chromosome) { return chromosome.fitness;}
-
-template<typename n_type, typename f_type>
-void Population<n_type, f_type>::refresh_nofit()
+bool Population::wayToSort(int i,int j)
 {
-    auto lethul_num = floor(size * lethal);
-//
-    valarray<Chromosome> to_sort_arr(population_set.size());
-//
-    sort(population_set.begin(), population_set.end(), wayToSort);
-//
-    Chromosome best = population_set[0];
-    Chromosome worst = population_set[1];
+    return (population_set[i].getFitness()<population_set[j].getFitness());
+}
+
+void Population::refresh_nofit()
+{
+
+    auto lethul_num = static_cast<int>(floor(size * lethal));
+
+    double fitnes_array[population_set.size()];
+
+    for (int k = 0; k < population_set.size() ; k++)
+    {
+        fitnes_array[k] = population_set[k].getFitness();
+    }
+    sort(fitnes_array, fitnes_array + population_set.size());
+    //
+
+    vector<Chromosome> new_population;
+
+    for (int l = 0; l < size; l++)
+    {
+        for (int p = 0; l < size; p++)
+        {
+            if(fitnes_array[l] == population_set[p].getFitness())
+            {
+                new_population[l] = population_set[p];
+                population_set.erase(population_set.begin()+p);
+            }
+        }
+    }
+
+    population_set = new_population;
+
+    Chromosome best = population_set[size - 1];
+    Chromosome worst = population_set[size - 2];
 //
     vector<Chromosome> sub_set = generate_subset(lethul_num);
     vector<Chromosome> one;

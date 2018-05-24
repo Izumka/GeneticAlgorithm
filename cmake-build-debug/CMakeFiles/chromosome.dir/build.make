@@ -81,43 +81,121 @@ CMakeFiles/chromosome.dir/main.cpp.o.provides: CMakeFiles/chromosome.dir/main.cp
 CMakeFiles/chromosome.dir/main.cpp.o.provides.build: CMakeFiles/chromosome.dir/main.cpp.o
 
 
-CMakeFiles/chromosome.dir/population.cpp.o: CMakeFiles/chromosome.dir/flags.make
-CMakeFiles/chromosome.dir/population.cpp.o: ../population.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chromosome.dir/population.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chromosome.dir/population.cpp.o -c /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.cpp
+CMakeFiles/chromosome.dir/Population/population.cpp.o: CMakeFiles/chromosome.dir/flags.make
+CMakeFiles/chromosome.dir/Population/population.cpp.o: ../Population/population.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chromosome.dir/Population/population.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chromosome.dir/Population/population.cpp.o -c /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.cpp
 
-CMakeFiles/chromosome.dir/population.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chromosome.dir/population.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.cpp > CMakeFiles/chromosome.dir/population.cpp.i
+CMakeFiles/chromosome.dir/Population/population.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chromosome.dir/Population/population.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.cpp > CMakeFiles/chromosome.dir/Population/population.cpp.i
 
-CMakeFiles/chromosome.dir/population.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chromosome.dir/population.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.cpp -o CMakeFiles/chromosome.dir/population.cpp.s
+CMakeFiles/chromosome.dir/Population/population.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chromosome.dir/Population/population.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.cpp -o CMakeFiles/chromosome.dir/Population/population.cpp.s
 
-CMakeFiles/chromosome.dir/population.cpp.o.requires:
+CMakeFiles/chromosome.dir/Population/population.cpp.o.requires:
 
-.PHONY : CMakeFiles/chromosome.dir/population.cpp.o.requires
+.PHONY : CMakeFiles/chromosome.dir/Population/population.cpp.o.requires
 
-CMakeFiles/chromosome.dir/population.cpp.o.provides: CMakeFiles/chromosome.dir/population.cpp.o.requires
-	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/population.cpp.o.provides.build
-.PHONY : CMakeFiles/chromosome.dir/population.cpp.o.provides
+CMakeFiles/chromosome.dir/Population/population.cpp.o.provides: CMakeFiles/chromosome.dir/Population/population.cpp.o.requires
+	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Population/population.cpp.o.provides.build
+.PHONY : CMakeFiles/chromosome.dir/Population/population.cpp.o.provides
 
-CMakeFiles/chromosome.dir/population.cpp.o.provides.build: CMakeFiles/chromosome.dir/population.cpp.o
+CMakeFiles/chromosome.dir/Population/population.cpp.o.provides.build: CMakeFiles/chromosome.dir/Population/population.cpp.o
+
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o: CMakeFiles/chromosome.dir/flags.make
+CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o: ../Chromosome/Chromosome.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o -c /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.cpp
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.cpp > CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.i
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.cpp -o CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.s
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o.requires:
+
+.PHONY : CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o.requires
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o.provides: CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o.requires
+	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o.provides.build
+.PHONY : CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o.provides
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o.provides.build: CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o
+
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o: CMakeFiles/chromosome.dir/flags.make
+CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o: ../Chromosome/Chromosome_binary.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o -c /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome_binary.cpp
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome_binary.cpp > CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.i
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome_binary.cpp -o CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.s
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o.requires:
+
+.PHONY : CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o.requires
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o.provides: CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o.requires
+	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o.provides.build
+.PHONY : CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o.provides
+
+CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o.provides.build: CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o
+
+
+CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o: CMakeFiles/chromosome.dir/flags.make
+CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o: ../Chromosome/functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o -c /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.cpp
+
+CMakeFiles/chromosome.dir/Chromosome/functions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chromosome.dir/Chromosome/functions.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.cpp > CMakeFiles/chromosome.dir/Chromosome/functions.cpp.i
+
+CMakeFiles/chromosome.dir/Chromosome/functions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chromosome.dir/Chromosome/functions.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.cpp -o CMakeFiles/chromosome.dir/Chromosome/functions.cpp.s
+
+CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o.requires:
+
+.PHONY : CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o.requires
+
+CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o.provides: CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o.requires
+	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o.provides.build
+.PHONY : CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o.provides
+
+CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o.provides.build: CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o
 
 
 # Object files for target chromosome
 chromosome_OBJECTS = \
 "CMakeFiles/chromosome.dir/main.cpp.o" \
-"CMakeFiles/chromosome.dir/population.cpp.o"
+"CMakeFiles/chromosome.dir/Population/population.cpp.o" \
+"CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o" \
+"CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o" \
+"CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o"
 
 # External object files for target chromosome
 chromosome_EXTERNAL_OBJECTS =
 
 chromosome: CMakeFiles/chromosome.dir/main.cpp.o
-chromosome: CMakeFiles/chromosome.dir/population.cpp.o
+chromosome: CMakeFiles/chromosome.dir/Population/population.cpp.o
+chromosome: CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o
+chromosome: CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o
+chromosome: CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o
 chromosome: CMakeFiles/chromosome.dir/build.make
 chromosome: CMakeFiles/chromosome.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable chromosome"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable chromosome"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chromosome.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -126,7 +204,10 @@ CMakeFiles/chromosome.dir/build: chromosome
 .PHONY : CMakeFiles/chromosome.dir/build
 
 CMakeFiles/chromosome.dir/requires: CMakeFiles/chromosome.dir/main.cpp.o.requires
-CMakeFiles/chromosome.dir/requires: CMakeFiles/chromosome.dir/population.cpp.o.requires
+CMakeFiles/chromosome.dir/requires: CMakeFiles/chromosome.dir/Population/population.cpp.o.requires
+CMakeFiles/chromosome.dir/requires: CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o.requires
+CMakeFiles/chromosome.dir/requires: CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o.requires
+CMakeFiles/chromosome.dir/requires: CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o.requires
 
 .PHONY : CMakeFiles/chromosome.dir/requires
 

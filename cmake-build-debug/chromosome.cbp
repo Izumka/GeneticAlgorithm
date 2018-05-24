@@ -84,16 +84,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/chromosome.h">
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.cpp">
+			<Option target="chromosome"/>
+		</Unit>
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.h">
+			<Option target="chromosome"/>
+		</Unit>
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome_binary.cpp">
+			<Option target="chromosome"/>
+		</Unit>
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome_binary.h">
+			<Option target="chromosome"/>
+		</Unit>
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.cpp">
+			<Option target="chromosome"/>
+		</Unit>
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.h">
+			<Option target="chromosome"/>
+		</Unit>
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.cpp">
+			<Option target="chromosome"/>
+		</Unit>
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.h">
 			<Option target="chromosome"/>
 		</Unit>
 		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/main.cpp">
-			<Option target="chromosome"/>
-		</Unit>
-		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.cpp">
-			<Option target="chromosome"/>
-		</Unit>
-		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/population.h">
 			<Option target="chromosome"/>
 		</Unit>
 		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/CMakeLists.txt">

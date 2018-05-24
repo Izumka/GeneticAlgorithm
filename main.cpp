@@ -1,23 +1,17 @@
 #include <iostream>
-
 #include <random>
 #include <vector>
 #include <algorithm>
 #include <valarray>
 #include <thread>
-//#include "chromosome.h"
-//#include "population.h"
+#include "Chromosome/chromosome.h"
+#include "Population/population.h"
 
 using std::vector;
 using namespace std;
 
 
-int main() {
-
-    return 0;
-}
-
-double fit(vector<int>& lst){
+int fitnes_func(vector<int> lst){
     int size = lst.size();
 
     valarray<double> arr_for_sum(size);
@@ -29,4 +23,25 @@ double fit(vector<int>& lst){
     }
 
     return arr_for_sum.sum();
+}
+
+int main(){
+
+    Population population = Population(5,0,fitnes_func,10);
+
+    population.generate_init();
+    population.refresh_nofit();
+
+    while(true){
+        population.prob_crossover();
+        population.prob_mutation();
+        population.refresh_nofit();
+        double best = population.getBest_fit();
+        double worst = population.getWorst_fit();
+        if(best/worst < 0.005){
+            break;
+        }
+    }
+
+    return 0;
 }
