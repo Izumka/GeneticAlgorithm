@@ -48,7 +48,7 @@ public:
                                                                                  num_type(num_type),
                                                                                   size(size), theard_num(theard_num),fitnes_fun(fit_func)
     {
-        std::cout << "Create population" << std::endl;
+//        std::cout << "Create population" << std::endl;
         ;
         cross_prob = 0.4;
         prob_mut = 0.05;

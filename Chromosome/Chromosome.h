@@ -14,6 +14,15 @@ private:
     void Init(int len, std::vector<int> gene_vect);
 
 public:
+
+    std::string take_string(){
+        std::string str = "";
+        for (int item : genes) {
+            str += item;
+        }
+        return str;
+    }
+
     std::function<double(std::vector<int>)> fitness_func;
 
 //    double (*fitness_func)(std::vector<int>);

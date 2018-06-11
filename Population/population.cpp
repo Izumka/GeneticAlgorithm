@@ -15,16 +15,16 @@ using namespace std;
 void Population::generate_init()
 {
 
-    cout << "1: Checking generate_init"<< endl;
+//    cout << "1: Checking generate_init"<< endl;
     population_set = generate_subset(size);
     calculation_on_set();
-    cout << "1: OK"<< endl;
+//    cout << "1: OK"<< endl;
 }
 
 vector<Chromosome> Population::generate_subset(int size){
-    cout << "2: Checking generate_subset"<< endl;
+//    cout << "2: Checking generate_subset"<< endl;
     vector<Chromosome> population;
-    cout << "2.1: Init chromosome vector"<< endl;
+//    cout << "2.1: Init chromosome vector"<< endl;
 
 
 
@@ -32,7 +32,7 @@ vector<Chromosome> Population::generate_subset(int size){
     {
         population.push_back(Chromosome(genes_length, fitnes_fun));
     }
-    cout << "2.2: Full the chromosome vector"<< endl;
+//    cout << "2.2: Full the chromosome vector"<< endl;
     return population;
 }
 
@@ -40,14 +40,14 @@ vector<Chromosome> Population::generate_subset(int size){
 void Population::calculation_on_set()
 {
     calc_fithes();
-    cout << "2.3.: Calc the chromosome vector"<< endl;
+//    cout << "2.3.: Calc the chromosome vector"<< endl;
 }
 
 void Population::calc_fit(int start, int end)
 {
-    cout << "here"<< endl;
-    cout << start<< endl;
-    cout << end << endl;
+////    cout << "here"<< endl;
+//    cout << start<< endl;
+//    cout << end << endl;
 
     for (int i = start; i <= end; i++)
     {
@@ -60,21 +60,21 @@ void Population::calc_fit(int start, int end)
 
 void Population::calc_fithes()
 {
-    cout << "2.3.1: Checking cal_fitnes"<< endl;
+//    cout << "2.3.1: Checking cal_fitnes"<< endl;
     vector<thread> threads;
 //
     int start = 0;
     int end = 0;
 
 
-    cout << "2.3.2: Checking ..."<< endl;
+//    cout << "2.3.2: Checking ..."<< endl;
     if(theard_num != 1){
         for (int i = 1; i <= theard_num; i++)
         {
 
             if(i == theard_num)
             {
-                cout << "num of thread = "<< i<< endl;
+//                cout << "num of thread = "<< i<< endl;
                 end = size;
             }
             else
@@ -83,19 +83,19 @@ void Population::calc_fithes()
             }
             threads.push_back(thread(&Population::calc_fit,this, start, end));
             start = end;
-            cout << "Add thread"<< endl;
+//            cout << "Add thread"<< endl;
         }
-        cout << "Checking...2"<< endl;
+//        cout << "Checking...2"<< endl;
         for (int i = 0; i < theard_num; i++)
         {
-            cout << "Checking join"<< endl;
+//            cout << "Checking join"<< endl;
             threads[i].join();
-            cout << "Checking join"<< endl;
+//            cout << "Checking join"<< endl;
         }
     }
     else
     {
-        cout << "1 thread"<< endl;
+//        cout << "1 thread"<< endl;
         for (int i = 0; i < population_set.size(); i++)
         {
             cout << i << endl;
