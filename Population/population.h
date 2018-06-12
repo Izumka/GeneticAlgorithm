@@ -68,7 +68,7 @@ public:
 
     void prob_crossover();
 
-    void prob_mutation();
+//    void prob_mutation();
 
     void refresh_nofit();
 

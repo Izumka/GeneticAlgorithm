@@ -11,17 +11,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fff8414d-ebdf-4d70-9091-09b19f5fae42" name="Default" comment="">
+    <list default="true" id="fff8414d-ebdf-4d70-9091-09b19f5fae42" name="Default" comment="7">
+      <change afterPath="$PROJECT_DIR$/Chromosome/difflib.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chromosome/Chromosome.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chromosome/Chromosome.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chromosome/Chromosome.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chromosome/Chromosome.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chromosome/Chromosome_binary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chromosome/Chromosome_binary.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Population/population.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Population/population.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chromosome.dir/Chromosome/Chromosome.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chromosome.dir/Population/population.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chromosome.dir/Population/population.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chromosome.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/chromosome.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/chromosome" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/chromosome" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Population/population.h" beforeDir="false" afterPath="$PROJECT_DIR$/Population/population.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="population.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="population.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Population/population.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
-              <caret line="211" column="1" lean-forward="true" selection-start-line="211" selection-start-column="1" selection-end-line="211" selection-end-column="1" />
+            <state relative-caret-position="376">
+              <caret line="187" column="1" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -94,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="population.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="population.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Population/population.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="311">
+              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
               <folding>
                 <element signature="e#65#84#0" expanded="true" />
               </folding>
@@ -109,8 +102,8 @@
       <file leaf-file-name="Chromosome.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Chromosome/Chromosome.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="323">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
             </state>
           </provider>
         </entry>
@@ -118,8 +111,17 @@
       <file leaf-file-name="Chromosome.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Chromosome/Chromosome.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
+            <state relative-caret-position="114">
+              <caret line="115" column="21" lean-forward="true" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -135,8 +137,8 @@
       <find>refre</find>
       <find>here</find>
       <find>couy</find>
-      <find>cou</find>
       <find>cout</find>
+      <find>cou</find>
       <find>cro</find>
     </findStrings>
   </component>
@@ -153,12 +155,12 @@
         <option value="$PROJECT_DIR$/Chromosome/chromosome.h" />
         <option value="$PROJECT_DIR$/Chromosome/Chromosome_binary.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Population/population.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Chromosome/Chromosome_binary.h" />
+        <option value="$PROJECT_DIR$/Population/population.cpp" />
         <option value="$PROJECT_DIR$/Chromosome/Chromosome.h" />
         <option value="$PROJECT_DIR$/Chromosome/Chromosome.cpp" />
-        <option value="$PROJECT_DIR$/Population/population.cpp" />
+        <option value="$PROJECT_DIR$/Population/population.h" />
       </list>
     </option>
   </component>
@@ -265,7 +267,7 @@
       <workItem from="1527152975844" duration="3727000" />
       <workItem from="1528732678684" duration="4315000" />
       <workItem from="1528741377275" duration="13733000" />
-      <workItem from="1528801367426" duration="5140000" />
+      <workItem from="1528801367426" duration="5903000" />
     </task>
     <task id="LOCAL-00001" summary="population">
       <created>1526920316709</created>
@@ -351,26 +353,40 @@
       <option name="project" value="LOCAL" />
       <updated>1528733548275</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update to last version">
+      <created>1528806990025</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1528806990025</updated>
+    </task>
+    <task id="LOCAL-00014" summary="6">
+      <created>1528807602813</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1528807602813</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154055000" />
+    <option name="totallyTimeSpent" value="154818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="1366" height="745" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1707132" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32952693" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49924126" weight="0.38662317" />
       <window_info anchor="bottom" id="CMake" order="7" />
-      <window_info anchor="right" id="LuaJ" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007587" side_tool="true" weight="0.38499185" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49924126" weight="0.19738989" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5644372" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.22185971" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1707132" />
+      <window_info anchor="right" id="LuaJ" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.47634584" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -380,7 +396,6 @@
       <window_info anchor="bottom" id="TeamCity" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -450,24 +465,26 @@
     <MESSAGE value="- add 2 type of Chromosome&#10;- fix population&#10;- make this shit work together" />
     <MESSAGE value="find some problem" />
     <MESSAGE value="update to last version" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to last version" />
+    <MESSAGE value="6" />
+    <MESSAGE value="7" />
+    <option name="LAST_COMMIT_MESSAGE" value="7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Population/population.cpp</url>
-          <line>98</line>
+          <line>70</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Population/population.cpp</url>
-          <line>101</line>
+          <line>72</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Population/population.cpp</url>
-          <line>63</line>
+          <line>45</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -477,12 +494,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Population/population.cpp</url>
-          <line>266</line>
+          <line>206</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Population/population.cpp</url>
-          <line>258</line>
+          <line>198</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -770,13 +787,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Chromosome/chromosome.h" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Chromosome/Chromosome_binary.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -787,17 +797,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/5/functional">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="2247" selection-start-line="2247" selection-end-line="2247" />
         </state>
       </provider>
     </entry>
@@ -811,6 +821,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/5/functional">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="2247" selection-start-line="2247" selection-end-line="2247" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Chromosome/Chromosome_binary.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -818,26 +835,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chromosome/Chromosome.cpp">
+    <entry file="file://$PROJECT_DIR$/Population/population.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="38" column="45" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chromosome/Chromosome.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Population/population.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        <state relative-caret-position="376">
+          <caret line="187" column="1" selection-start-line="187" selection-start-column="1" selection-end-line="187" selection-end-column="1" />
           <folding>
-            <element signature="e#65#84#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -849,12 +852,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Population/population.cpp">
+    <entry file="file://$PROJECT_DIR$/Chromosome/Chromosome.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="211" column="1" lean-forward="true" selection-start-line="211" selection-start-column="1" selection-end-line="211" selection-end-column="1" />
+        <state relative-caret-position="323">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chromosome/Chromosome.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="115" column="21" lean-forward="true" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Population/population.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#65#84#0" expanded="true" />
           </folding>
         </state>
       </provider>
