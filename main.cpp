@@ -13,7 +13,7 @@ using namespace std;
 
 double fitnes_func(vector<int> lst){
 //    std::cout << "lets" << std::endl;
-
+    
     int size = lst.size();
 
     valarray<double> arr_for_sum(size);
@@ -30,29 +30,30 @@ double fitnes_func(vector<int> lst){
 int main(){
     int b = 0;
     int * e = new int(1);
-    cout << e << endl;
-    cout << *e << endl;
-    cout << &(*e) << endl;
 
     vector<int> shit = {1,1,2,3,2,54,4,1,87};
-    Population population = Population(5,0,fitnes_func,1);
+    Population population = Population(5,0,fitnes_func,10);
     population.generate_init();
+
+    population.prob_crossover();
 //    cout << "sadads"<< endl;
 //    population.refresh_nofit();
 //    cout << ""<< endl;
 //    cout << "sldkf"<< endl;
 
-    while(true){
+//    while(true){
+//
 //        population.prob_crossover();
-        population.prob_mutation();
+//        population.prob_mutation();
 //        population.refresh_nofit();
-        double best = population.getBest_fit();
-        double worst = population.getWorst_fit();
-        if(best/worst < 0.005){
-            break;
-        }
-    }
-    string string1 = "{";
+//
+//        double best = population.getBest_fit();
+//        double worst = population.getWorst_fit();
+//        if(best/worst < 0.005){
+//            break;
+//        }
+//    }
+//    string string1 = "{";
 
 
 

@@ -11,6 +11,7 @@ private:
     int length;
 
     std::vector<int> genes;
+
     void Init(int len, std::vector<int> gene_vect);
 
 public:
@@ -70,6 +71,8 @@ public:
     void setFitness(double fitness) {
         Chromosome::fitness = fitness;
     }
+
+    double ratio;
 };
 
 #endif //CHROMOSOME_CHROMOSOME_H

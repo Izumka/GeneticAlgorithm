@@ -98,10 +98,10 @@ void Chromosome::mutate() {
 }
 
 void Chromosome::calc_fitnes() {
-    cout << "here2"<< endl;
+//    cout << "here2"<< endl;
 
     fitness = fitness_func(genes);
 
-    cout << "here3"<< endl;
+//    cout << "here3"<< endl;
 }
 

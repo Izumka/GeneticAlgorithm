@@ -15,7 +15,7 @@ private:
     std::function<double (std::vector<int>)> fitness_func;
     std::vector<int> genes;
 
-    void Init(int len, std::function<double (std::vector<int>)> fitfunc, std::vector<int> gene_vect);
+    void Init(int len,std::function<double (std::vector<int>)> fitfunc, std::vector<int> gene_vect);
 public:
     double fitness;
 
