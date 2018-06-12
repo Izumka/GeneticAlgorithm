@@ -179,17 +179,18 @@ int myRandVec(vector<int> arr, vector<double> freq, int n){
 
 void Population::prob_crossover()
 {
-    const vector<double> probabilities = calc_prob();
-    for (auto  item: probabilities ) {
-        cout << item << " ";
-}
-    cout << "" << endl;
+
 
     vector<int> index_vec = {0,1,2,3,4,5,6,7,8,9} ;
 
 
 
     for (auto  item: population_set) {
+        const vector<double> probabilities = calc_prob();
+        for (auto  item: probabilities ) {
+            cout << item << " ";
+        }
+        cout << "" << endl;
         bool same;
 
         int chomosome_index = myRandVec(index_vec, probabilities, population_set.size());
@@ -197,6 +198,8 @@ void Population::prob_crossover()
         Chromosome chromosome = population_set[chomosome_index];
         Chromosome other = population_set[other_index];
 
+        std::cout << "1> " << chomosome_index << std::endl;
+        std::cout << "2> " << other_index << std::endl;
 
         cout<< "Chromosome 1: ";
         for (int i : chromosome.getGenes()) {
@@ -210,18 +213,20 @@ void Population::prob_crossover()
         }
         cout << ""<< endl;
 
+        srand ( time(NULL) );
         if (other_index == chomosome_index){
-            population_set.erase(population_set.begin() + chomosome_index  - 1);
+            population_set.erase(population_set.begin() + chomosome_index);
             chromosome.crossover(&other);
             population_set.push_back(chromosome);
         } else{
-            population_set.erase(population_set.begin() + chomosome_index - 1);
+            population_set.erase(population_set.begin() + chomosome_index);
             chromosome.crossover(&other);
-            population_set.insert(population_set.begin() + chomosome_index - 1, chromosome);
-            population_set.erase(population_set.begin() + other_index - 1);
+            population_set.insert(population_set.begin() + chomosome_index, chromosome);
+            population_set.erase(population_set.begin() + other_index );
             other.crossover(&chromosome);
             population_set.push_back(other);
         }
+        calc_fithes();
     }
 }
 
@@ -243,9 +248,9 @@ void Population::refresh_nofit()
 
     vector<Chromosome> new_population;
 
-    for (int l = 0; l < size; l++)
+    for (int l = 0; l < genes_length; l++)
     {
-        for (int p = 0; l < size; p++)
+        for (int p = 0; l < genes_length; p++)
         {
             if(fitnes_array[l] == population_set[p].getFitness())
             {
@@ -254,6 +259,7 @@ void Population::refresh_nofit()
             }
         }
     }
+
 
     population_set = new_population;
 

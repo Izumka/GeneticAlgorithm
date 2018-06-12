@@ -19,7 +19,6 @@ typedef std::vector<int>::iterator vec_iter;
 vector<int> slicer(vec_iter first, vec_iter last) {
     vector<int> fin;
     for (vec_iter cur = first; cur != last; ++cur) {
-        cout<<*cur<<endl;
         fin.push_back(*cur);
     }
     return fin;

@@ -91,7 +91,6 @@ Chromosome Chromosome::crossover(Chromosome *other_chrom) {
 }
 
 void Chromosome::mutate() {
-    srand ( time(NULL) );
     int swap_1 = rand() % ((*this).genes.size()) + 0;
     int swap_2 = rand() % ((*this).genes.size()) + 0;
 
