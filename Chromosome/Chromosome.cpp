@@ -13,7 +13,9 @@
 #include <algorithm>
 #include <time.h>
 #include <functional>
+#include <sstream>
 #include "functions.h"
+#include "difflib.h
 
 
 using namespace std;
@@ -105,3 +107,28 @@ void Chromosome::calc_fitnes() {
 //    cout << "here3"<< endl;
 }
 
+
+void Chromosome::calc_ratio(Chromosome best_chromosome) {
+    cout << "here2"<< endl;
+    string a1 = vector_to_string((*this).genes);
+    string a2 = vector_to_string(best_chromosome.genes);
+
+    auto matcher = difflib::MakeSequenceMatcher(a1,a2);
+
+    ratio = matcher.ratio();
+
+    cout << "here3"<< endl;
+}
+
+
+std::string Chromosome::vector_to_string(std::vector<int> genes) {
+    std::ostringstream oss;
+    if (!genes.empty())
+    {
+        std::copy(genes.begin(), genes.end()-1,
+                  std::ostream_iterator<int>(oss));
+
+        oss << genes.back();
+    }
+    return oss.str();
+}

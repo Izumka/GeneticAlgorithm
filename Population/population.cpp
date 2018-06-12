@@ -9,72 +9,49 @@
 #include <algorithm>
 #include <thread>
 
-//using namespace std::vector;
 using namespace std;
 
 void Population::generate_init()
 {
 
-//    cout << "1: Checking generate_init"<< endl;
     population_set = generate_subset(genes_length);
     calculation_on_set();
-//    cout << "1: OK"<< endl;
 }
 
 vector<Chromosome> Population::generate_subset(int size){
-//    cout << "2: Checking generate_subset"<< endl;
     vector<Chromosome> population;
-//    cout << "2.1: Init chromosome vector"<< endl;
-
-
 
     for(int i = 0; i < size; i++)
     {
         population.push_back(Chromosome(this->size, fitnes_fun));
     }
-//    cout << "2.2: Full the chromosome vector"<< endl;
     return population;
 }
-
 
 void Population::calculation_on_set()
 {
     calc_fithes();
-//    cout << "2.3.: Calc the chromosome vector"<< endl;
 }
 
 void Population::calc_fit(int start, int end)
 {
-//    cout << "here"<< endl;
-//    cout << start<< endl;
-//    cout << end << endl;
-
     for (int i = start; i <= end; i++)
     {
-//        cout << i << end;
         population_set[i].calc_fitnes();
-//        cout<< i << population_set[i].getFitness() << endl;
     }
 }
 
-
 void Population::calc_fithes()
 {
-//    cout << "2.3.1: Checking cal_fitnes"<< endl;
     vector<thread> threads;
-//
     int start = 0;
     int end = 0;
 
-
-//    cout << "2.3.2: Checking ..."<< endl;
     if(theard_num != 1){
         for (int i = 1; i <= theard_num; i++)
         {
-
             if(i == theard_num)
             {
-//                cout << "num of thread = "<< i<< endl;
                 end = size;
             }
             else
@@ -83,22 +60,16 @@ void Population::calc_fithes()
             }
             threads.push_back(thread(&Population::calc_fit,this, start, end));
             start = end;
-//            cout << "Add thread"<< endl;
         }
-//        cout << "Checking...2"<< endl;
         for (int i = 0; i < theard_num; i++)
         {
-//            cout << "Checking join"<< endl;
             threads[i].join();
-//            cout << "Checking join"<< endl;
         }
     }
     else
     {
-//        cout << "1 thread"<< endl;
         for (int i = 0; i < population_set.size(); i++)
         {
-//            cout << i << endl;
             population_set[i].calc_fitnes();
         }
     }
@@ -117,18 +88,15 @@ vector<double> Population::calc_prob()
 
     double sum = val_arr.sum();
     valarray<double> perc_arr(val_arr.size());
-//
     for (int j = 0; j < val_arr.size(); j++)
     {
         perc_arr[j] = ((val_arr[j]/sum)* (1 - retio_arr[j]));
     }
     perc_arr[0] += 1 - perc_arr.sum();
-//
     vector<double> ended;
     for (auto  item: perc_arr ) {
         ended.push_back(item);
     }
-//
     return ended;
 }
 
@@ -151,11 +119,8 @@ int myRandVec(vector<int> arr, vector<double> freq, int n){
     for (j = 1; j < n; ++j)
         prefix.push_back(prefix.at(j - 1) + arr.at(j));
 
-    // prefix[n-1] is sum of all frequencies. Generate a random number
-    // with value from 1 to this sum
     int r = (rand() % prefix.at(n - 1)) + 1;
 
-    // Find index of ceiling of r in prefix arrat
     int indexc = findCeilVec(prefix, r, 0, n - 1);
     return arr.at(indexc);
 
@@ -206,35 +171,10 @@ void Population::prob_crossover()
             other.crossover(&chromosome);
             population_set.push_back(other);
         }
-
-
-
-}
-
-
-
-}
-
-
-void Population::prob_mutation()
-{
-    for (Chromosome chromosome : population_set)
-    {
-        random_device rd;
-        mt19937 gen(rd());
-        uniform_real_distribution<> dis(0, 1);
-//
-        if(dis(gen)< prob_mut)
-        {
-            chromosome.mutate();
-        }
     }
 }
 
-//bool Population::wayToSort(int i,int j)
-//{
-//    return (population_set[i].getFitness()<population_set[j].getFitness());
-//}
+
 
 void Population::refresh_nofit()
 {
