@@ -77,6 +77,7 @@ public:
     void calc_ratio(Chromosome best_chromosome);
     std::string vector_to_string(std::vector<int> genes);
 
+    Chromosome();
 };
 
 #endif //CHROMOSOME_CHROMOSOME_H

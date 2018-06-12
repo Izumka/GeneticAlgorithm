@@ -15,7 +15,7 @@
 #include <functional>
 #include <sstream>
 #include "functions.h"
-#include "difflib.h
+#include "difflib.h"
 
 
 using namespace std;
@@ -28,7 +28,6 @@ void Chromosome::Init(int len, std::vector<int> gene_vect) {
     }else{
         vector<int> x;
 
-        srand ( time(NULL) );
         for(int i = 0; i<(*this).length; i++){
             x.push_back(rand()%(*this).length);
         }
@@ -109,7 +108,6 @@ void Chromosome::calc_fitnes() {
 
 
 void Chromosome::calc_ratio(Chromosome best_chromosome) {
-    cout << "here2"<< endl;
     string a1 = vector_to_string((*this).genes);
     string a2 = vector_to_string(best_chromosome.genes);
 
@@ -117,7 +115,6 @@ void Chromosome::calc_ratio(Chromosome best_chromosome) {
 
     ratio = matcher.ratio();
 
-    cout << "here3"<< endl;
 }
 
 
@@ -131,4 +128,8 @@ std::string Chromosome::vector_to_string(std::vector<int> genes) {
         oss << genes.back();
     }
     return oss.str();
+}
+
+Chromosome::Chromosome() {
+
 }

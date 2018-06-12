@@ -33,11 +33,11 @@ int main(){
 
     vector<int> shit = {1,1,2,3,2,54,4,1,87};
     Population population = Population(5,0,fitnes_func,10);
-    population.generate_init();
+//    population.generate_init();
 
     population.prob_crossover();
 //    cout << "sadads"<< endl;
-//    population.refresh_nofit();
+    population.refresh_nofit();
 //    cout << ""<< endl;
 //    cout << "sldkf"<< endl;
 

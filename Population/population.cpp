@@ -11,26 +11,41 @@
 
 using namespace std;
 
+
+bool fit_sort (Chromosome i,Chromosome j) { return (i.fitness>j.fitness); }
+
 void Population::generate_init()
 {
 
     population_set = generate_subset(genes_length);
     calculation_on_set();
+    sort(population_set.begin(), population_set.end(), fit_sort);
+    best_fit = population_set[0];
+    calculation_on_set_ratio();
 }
 
 vector<Chromosome> Population::generate_subset(int size){
-    vector<Chromosome> population;
 
+    vector<Chromosome> population;
+    srand ( time(NULL) );
     for(int i = 0; i < size; i++)
     {
+
         population.push_back(Chromosome(this->size, fitnes_fun));
     }
+
+
     return population;
 }
 
 void Population::calculation_on_set()
 {
     calc_fithes();
+}
+
+void Population::calculation_on_set_ratio()
+{
+    calc_ratio();
 }
 
 void Population::calc_fit(int start, int end)
@@ -40,6 +55,42 @@ void Population::calc_fit(int start, int end)
         population_set[i].calc_fitnes();
     }
 }
+
+void Population::calc_ratio() {
+
+
+    vector<thread> threads;
+    int start = 0;
+    int end = 0;
+
+    if(theard_num != 1){
+        for (int i = 1; i <= theard_num; i++)
+        {
+            if(i == theard_num)
+            {
+                end = size;
+            }
+            else
+            {
+                end += size/theard_num ;
+            }
+            threads.push_back(thread(&Population::calc_fit,this, start, end));
+            start = end;
+        }
+        for (int i = 0; i < theard_num; i++)
+        {
+            threads[i].join();
+        }
+    }
+    else
+    {
+        for (int i = 0; i < population_set.size(); i++)
+        {
+            population_set[i].calc_ratio(best_fit);
+        }
+    }
+}
+
 
 void Population::calc_fithes()
 {

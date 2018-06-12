@@ -24,8 +24,8 @@ private:
     double prob_mut;
     double lethal;
     int theard_num;
-    double best_fit;
-    double worst_fit;
+
+//    Chromosome worst_fit;
 // Additional data for logic
 
     std::vector<Chromosome> population_set;
@@ -36,9 +36,12 @@ private:
 
     void calculation_on_set();
 
+    void calculation_on_set_ratio();
+
+    void calc_ratio();
 public:
 
-
+    Chromosome best_fit;
 //    double (*fitnes_fun)(std::vector<int>);
 
     std::function<double(std::vector<int>)> fitnes_fun;
@@ -54,7 +57,8 @@ public:
         prob_mut = 0.05;
         lethal = 0.2;
         std::cout << "" << std::endl;
-
+        this->generate_init();
+        print_population();
 
     }
 
@@ -85,21 +89,7 @@ public:
         return cross_prob;
     }
 
-    double getBest_fit() const {
-        return best_fit;
-    }
 
-    void setBest_fit(double best_fit) {
-        Population::best_fit = best_fit;
-    }
-
-    double getWorst_fit() const {
-        return worst_fit;
-    }
-
-    void setWorst_fit(double worst_fit) {
-        Population::worst_fit = worst_fit;
-    }
 
     double getProb_mut() const {
         return prob_mut;
@@ -137,6 +127,19 @@ public:
 //    const std::function<double (std::vector<int>)> &getFitnes_fun() const {
 //        return fitnes_fun;
 //    }
+
+    void print_population(){
+        std::cout << "Population" << std::endl;
+        for (Chromosome item : population_set) {
+            for (auto set : item.getGenes()) {
+                std::cout << set;
+            }
+            std::cout << ""<< std::endl;
+
+        }
+        std::cout << "\n" << std::endl;
+    }
+
 
     virtual ~Population() {
         std::cout << "Chromosome is dead ;=)" << std::endl;
