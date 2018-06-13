@@ -39,7 +39,7 @@ void Chromosome::Init(int len, std::vector<int> gene_vect) {
 
 vector<Chromosome> Chromosome::crossover(Chromosome *other_chrom) {
     map<string,Chromosome*> parents = {{"parent1",this}, {"parent2", other_chrom}};
-    cout<<(*this).length<<endl;
+//    cout<<(*this).length<<endl;
     vector<int> new_genes_1;
     vector<int> new_genes_2;
 

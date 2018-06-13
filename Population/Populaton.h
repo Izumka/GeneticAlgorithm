@@ -22,19 +22,9 @@ private:
 
     std::vector<Chromosome> population_set;
 
-    Chromosome best_chromosome;
-
-    void init();
-
     std::vector<Chromosome> generate_population(size_t population_size);
 
     void calculateProbability();
-
-
-    void probabilry_crossover();
-    void probabilry_mutate();
-    void refresh_nofit();
-
 
 
 public:
@@ -61,6 +51,8 @@ public:
 
     void runAlgorithm();
 
+    void calc_fit_ratio();
+
     void print_population(){
         int iterator = 1;
         std::cout << "Population:" << std::endl;
@@ -80,6 +72,16 @@ public:
         std::cout << "" << std::endl;
     }
 
+    void init();
+
+    void refresh_nofit();
+
+    void probabilry_crossover();
+
+    void probabilry_mutate();
+
+    Chromosome best_chromosome;
+    Chromosome worst_chromosome;
 };
 
 

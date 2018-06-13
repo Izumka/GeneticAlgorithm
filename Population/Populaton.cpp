@@ -30,18 +30,7 @@ void Populaton::init() {
 
     population_set = generate_population(population_size);
 
-    for (int i = 0; i < population_size; i++)
-    {
-        population_set[i].calc_fitnes();
-    }
-
-    sort(population_set.begin(), population_set.end(), sortFunc);
-    best_chromosome = population_set[0];
-
-    for (int i = 0; i < population_size; i++)
-    {
-        population_set[i].calc_ratio(best_chromosome);
-    }
+    calc_fit_ratio();
 }
 
 std::vector<Chromosome> Populaton::generate_population(size_t population_size) {
@@ -156,6 +145,44 @@ void Populaton::probabilry_crossover() {
 
     vector<int> index_vector = {0,1,2,3,4,5,6,7,8,9};
 
+    vector<int> ind_ddd;
+    int random=0;
+    int new_random=0;
+    for (int j = 0; j < population_size*cross_prob; ++j) {
+        while(random == new_random){
+            new_random = myRandVec(index_vector, vector_probabilities, population_size);
+            if(find(ind_ddd.begin(), ind_ddd.end(), new_random) != ind_ddd.end()){
+                random = new_random;
+                continue;
+            }
+        }
+        random = new_random;
+        ind_ddd.push_back(random);
+    }
+
+    vector<Chromosome> new_pop;
+    Chromosome chromosome1;
+    Chromosome chromosome2;
+    for (int k = 0; k < ind_ddd.size(); ++k) {
+        if(k%2 != 0){
+            continue;
+        }
+        chromosome1 = population_set[ind_ddd[k]];
+        chromosome2 = population_set[ind_ddd[k+1]];
+        vector<Chromosome> fff = chromosome1.crossover(&chromosome2);
+        for (int i = 0; i < 2; ++i) {
+            new_pop.push_back(fff[i]);
+        }
+    }
+
+    for (int j = 0; j < population_size; ++j) {
+        if(find(ind_ddd.begin(), ind_ddd.end(), j) == ind_ddd.end()){
+            new_pop.push_back(population_set[j]);
+        }
+
+    }
+    population_set = new_pop;
+    calc_fit_ratio();
 
 
 }
@@ -167,12 +194,12 @@ void Populaton::probabilry_mutate() {
             population_set[i].mutate();
         }
     }
+    calc_fit_ratio();
 }
 
 void Populaton::refresh_nofit() {
     int lethal_num = static_cast<int>(population_size * lethal);
 
-    std::cout << lethal_num << std::endl;
 
     sort(population_set.begin(), population_set.end(), sortFunc);
 
@@ -189,6 +216,21 @@ void Populaton::refresh_nofit() {
         sub_population[j].calc_ratio(best_chromosome);
         population_set.push_back(sub_population[j]);
     }
+    calc_fit_ratio();
+}
 
+void Populaton::calc_fit_ratio() {
+    for (int i = 0; i < population_size; i++)
+    {
+        population_set[i].calc_fitnes();
+    }
+
+    sort(population_set.begin(), population_set.end(), sortFunc);
+    best_chromosome = population_set[0];
+    worst_chromosome = population_set[1];
+    for (int i = 0; i < population_size; i++)
+    {
+        population_set[i].calc_ratio(best_chromosome);
+    }
 }
 
