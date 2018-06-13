@@ -136,6 +136,7 @@ int myRandVec(vector<int> arr, vector<double> freq, int n){
     for (j = 1; j < n; ++j)
         prefix.push_back(prefix.at(j - 1) + arr.at(j));
 
+
     int r = (rand() % prefix.at(n - 1)) + 1;
 
     int indexc = findCeilVec(prefix, r, 0, n - 1);
@@ -144,46 +145,19 @@ int myRandVec(vector<int> arr, vector<double> freq, int n){
 }
 
 void Populaton::probabilry_crossover() {
+//    srand ( (unsigned) time(NULL) );
     calculateProbability();
 
     vector<double> vector_probabilities(population_size);
 
     for (int i = 0; i < population_size; ++i) {
         vector_probabilities[i] = population_set[i].probability;
-    }
+        }
 
     vector<int> index_vector = {0,1,2,3,4,5,6,7,8,9};
 
-    int chromosome1_index;
-    int chromosome2_index;
-
-    for (int j = 0; j < (int)population_size*cross_prob; ++j) {
-        bool same;
-
-        chromosome1_index = myRandVec(index_vector, vector_probabilities, population_set.size());
-        chromosome2_index = myRandVec(index_vector, vector_probabilities, population_set.size());
-
-        Chromosome chromosome1 = population_set[chromosome1_index];
-        Chromosome chromosome2 = population_set[chromosome2_index];
-
-        std::cout << chromosome1_index << " | " << chromosome2_index << std::endl;
-
-        if (chromosome1_index == chromosome2_index) {same = true;}
 
 
-        if(same){
-            population_set.erase(population_set.begin() + chromosome1_index);
-            chromosome1, chromosome2 = chromosome1.crossover(&chromosome2);
-            population_set.insert(population_set.begin() + chromosome1_index , chromosome1);
-        } else{
-            population_set.erase(population_set.begin() + chromosome1_index);
-            chromosome1, chromosome2 = chromosome1.crossover(&chromosome2);
-            population_set.insert(population_set.begin() + chromosome1_index , chromosome1);
-            population_set.erase(population_set.begin() + chromosome2_index);
-            population_set.insert(population_set.begin() + chromosome2_index , chromosome2);
-        }
-
-    }
 }
 
 void Populaton::probabilry_mutate() {

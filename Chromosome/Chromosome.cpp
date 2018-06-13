@@ -37,59 +37,29 @@ void Chromosome::Init(int len, std::vector<int> gene_vect) {
 //    this->fitness = fitness_func((*this).genes);
 }
 
-Chromosome Chromosome::crossover(Chromosome *other_chrom) {
+vector<Chromosome> Chromosome::crossover(Chromosome *other_chrom) {
     map<string,Chromosome*> parents = {{"parent1",this}, {"parent2", other_chrom}};
+    cout<<(*this).length<<endl;
+    vector<int> new_genes_1;
+    vector<int> new_genes_2;
 
-    vector<int> new_genes_1((*this).length);
-    vector<int> new_genes_2((*this).length);
-    fill(new_genes_1.begin(),new_genes_1.begin()+(*this).length,-1);
-    fill(new_genes_2.begin(),new_genes_2.begin()+(*this).length,-1);
-
-    // Define who has better fitness & assign better fitness to parent 1
-    if((*this).fitness < (*other_chrom).fitness){
-        parents["parent1"] = other_chrom;
-        parents["parent2"] = this;
-    }
-
-    // Generate random start and random length of gene copied
-    srand ( time(NULL) );
-    int mut_length = (int)(rand() % ((*this).length - 1) + (*this).length * 0.05);
-    int mut_start = rand() % ((*this).length - mut_length - 1) + 0;
+    int part_1 = rand() % ((*this).genes.size()) + 0;
 
     // Put part of parent one gene into new gene
-    vector<vector<int>> container1 = {slicer(new_genes_1.begin(), new_genes_1.begin() + mut_start + 1), slicer((*parents["parent1"]).genes.begin() + mut_start, (*parents["parent1"]).genes.begin() + mut_start + mut_length), slicer(new_genes_1.begin() + mut_start + mut_length, new_genes_1.begin() + new_genes_1.size())};
+    vector<vector<int>> container1 = {slicer((*parents["parent1"]).genes.begin(), (*parents["parent1"]).genes.begin() + part_1 + 1), slicer((*parents["parent2"]).genes.begin() + part_1, (*parents["parent2"]).genes.begin() + (*parents["parent1"]).genes.size())};
     v_merge(new_genes_1, container1);
 
-    vector<vector<int>> container2 = {slicer(new_genes_2.begin(), new_genes_2.begin() + mut_start + 1), slicer((*parents["parent2"]).genes.begin() + mut_start, (*parents["parent2"]).genes.begin() + mut_start + mut_length), slicer(new_genes_2.begin() + mut_start + mut_length, new_genes_2.begin() + new_genes_2.size())};
+    vector<vector<int>> container2 = {slicer((*parents["parent2"]).genes.begin(), (*parents["parent2"]).genes.begin() + part_1 + 1), slicer((*parents["parent1"]).genes.begin() + part_1, (*parents["parent1"]).genes.begin() + (*parents["parent2"]).genes.size())};
     v_merge(new_genes_2, container2);
 
-    for(int i: (*parents["parent2"]).genes){
-        if(find(new_genes_1.begin(), new_genes_1.end(), i) == new_genes_1.end()){
-            int pos = find(new_genes_1.begin(), new_genes_1.end(), -1) - new_genes_1.begin();
-            if(!pos>=new_genes_1.size()){
-                new_genes_1[pos] = i;
-            }
-        }
-    }
-
-    for(int j: (*parents["parent1"]).genes){
-        if(find(new_genes_2.begin(), new_genes_2.end(), j) == new_genes_2.end()){
-            int pos = find(new_genes_2.begin(), new_genes_2.end(), -1) - new_genes_2.begin();
-            if(!pos>=new_genes_2.size()){
-                new_genes_2[pos] = j;
-            }
-        }
-    }
-
     int new_length = (*this).length;
-//    double (*new_fit_fumc)(std::vector<int>)();
-//    new_fit_fumc = fitness_func;
+    function<int(vector<int>)> new_fitness_func = (*this).fitness_func;
 
-    Chromosome child_1 = Chromosome(new_length, fitness_func, new_genes_1);
-    Chromosome child_2 = Chromosome(new_length, fitness_func, new_genes_2);
-    return(child_1,child_2);
+    Chromosome child_1 = Chromosome(new_length, new_fitness_func, new_genes_1);
+    Chromosome child_2 = Chromosome(new_length, new_fitness_func, new_genes_2);
+
+    return vector<Chromosome>{child_1,child_2};
 }
-
 void Chromosome::mutate() {
     int swap_1 = rand() % ((*this).genes.size()) + 0;
     int swap_2 = rand() % ((*this).genes.size()) + 0;

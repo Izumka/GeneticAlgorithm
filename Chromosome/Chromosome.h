@@ -36,7 +36,7 @@ public:
         Init(len, gene_vect);
     }
 
-    Chromosome crossover(Chromosome *other_chrom);
+    std::vector<Chromosome> crossover(Chromosome *other_chrom);
 
     void mutate();
 
