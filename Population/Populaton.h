@@ -20,14 +20,14 @@ private:
 
     int theard_num;
 
-    std::vector<Chromosome> population_set;
-
     std::vector<Chromosome> generate_population(size_t population_size);
 
     void calculateProbability();
 
-
 public:
+
+
+    std::vector<Chromosome> population_set;
 
 //    void parallel_calc_fitnes();
 //    void parallel_calc_ratio();

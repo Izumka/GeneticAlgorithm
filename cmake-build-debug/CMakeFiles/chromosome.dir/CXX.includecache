@@ -191,6 +191,8 @@ valarray
 -
 thread
 -
+functional
+-
 Chromosome/Chromosome.h
 /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.h
 Population/Populaton.h

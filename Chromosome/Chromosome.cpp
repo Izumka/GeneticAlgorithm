@@ -29,7 +29,7 @@ void Chromosome::Init(int len, std::vector<int> gene_vect) {
         vector<int> x;
 
         for(int i = 0; i<(*this).length; i++){
-            x.push_back(rand()%(*this).length);
+            x.push_back(rand()%10);
         }
 
         this->genes = x;
