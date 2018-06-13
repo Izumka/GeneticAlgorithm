@@ -16,6 +16,8 @@ private:
 
 public:
 
+    double probability = 0;
+
     std::string take_string(){
         std::string str = "";
         for (int item : genes) {
@@ -27,7 +29,7 @@ public:
     std::function<double(std::vector<int>)> fitness_func;
 
 //    double (*fitness_func)(std::vector<int>);
-    double fitness;
+    double fitness = 0;
 
     Chromosome(int len,  const std::function<double(std::vector<int>)>& fit_fumc,std::vector<int> gene_vect=std::vector<int>{}){
         fitness_func = fit_fumc;
@@ -72,7 +74,7 @@ public:
         Chromosome::fitness = fitness;
     }
 
-    double ratio;
+    double ratio = 0;
 
     void calc_ratio(Chromosome best_chromosome);
     std::string vector_to_string(std::vector<int> genes);

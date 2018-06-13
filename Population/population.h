@@ -13,10 +13,10 @@
 class Population {
 
 private:
-    int genes_length;
+    int chromosome_size;
     int num_type;
 
-    int size;
+    int population_size;
 // Default config]
 
     double cross_prob;
@@ -42,14 +42,14 @@ private:
 public:
 
     Chromosome best_fit;
-//    double (*fitnes_fun)(std::vector<int>);
+//    double (*fitnes_func)(std::vector<int>);
 
     std::function<double(std::vector<int>)> fitnes_fun;
 
 
-    Population(int genes_length, int num_type, const std::function<double(std::vector<int>)> &fit_func, int size, int theard_num=1) : genes_length(genes_length),
+    Population(int genes_length, int num_type, const std::function<double(std::vector<int>)> &fit_func, int size, int theard_num=1) : chromosome_size(genes_length),
                                                                                  num_type(num_type),
-                                                                                  size(size), theard_num(theard_num),fitnes_fun(fit_func)
+                                                                                  population_size(size), theard_num(theard_num),fitnes_fun(fit_func)
     {
 //        std::cout << "Create population" << std::endl;
         ;
@@ -66,7 +66,7 @@ public:
 
 //    bool wayToSort(int i,int j);
 
-    std::vector<Chromosome> generate_subset(int size);
+    std::vector<Chromosome> generate_subset(size_t size);
 
     std::vector<double > calc_prob();
 
@@ -100,11 +100,11 @@ public:
     }
 
     int getGenes_length() const {
-        return genes_length;
+        return chromosome_size;
     }
 
     void setGenes_length(int genes_length) {
-        Population::genes_length = genes_length;
+        Population::chromosome_size = genes_length;
     }
 
     int getNum_type() const {
@@ -117,15 +117,15 @@ public:
 
 
     int getSize() const {
-        return size;
+        return population_size;
     }
 
     void setSize(int size) {
-        Population::size = size;
+        Population::population_size = size;
     }
 
 //    const std::function<double (std::vector<int>)> &getFitnes_fun() const {
-//        return fitnes_fun;
+//        return fitnes_func;
 //    }
 
     void print_population(){

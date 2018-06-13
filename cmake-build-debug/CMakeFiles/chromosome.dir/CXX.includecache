@@ -158,34 +158,22 @@ algorithm
 iostream
 -
 
-/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.cpp
-../Chromosome/Chromosome.h
-/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.h
-population.h
-/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.h
-string
--
-vector
--
-valarray
--
-cmath
--
-stdlib.h
--
-time.h
--
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/Populaton.cpp
 algorithm
 -
 thread
 -
+Populaton.h
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/Populaton.h
 
-/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.h
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/Populaton.h
+glob.h
+-
 iostream
 -
-functional
--
 vector
+-
+functional
 -
 ../Chromosome/Chromosome.h
 /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.h
@@ -205,6 +193,6 @@ thread
 -
 Chromosome/Chromosome.h
 /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.h
-Population/population.h
-/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.h
+Population/Populaton.h
+/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/Populaton.h
 

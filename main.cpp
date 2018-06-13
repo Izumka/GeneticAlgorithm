@@ -5,7 +5,8 @@
 #include <valarray>
 #include <thread>
 #include "Chromosome/Chromosome.h"
-#include "Population/population.h"
+#include "Population/Populaton.h"
+//#include "Population/population.h"
 
 using std::vector;
 using namespace std;
@@ -27,20 +28,20 @@ double fitnes_func(vector<int> lst){
     return arr_for_sum.sum();
 }
 
-int main(){
-    int b = 0;
-    int * e = new int(1);
-
-    vector<int> shit = {1,1,2,3,2,54,4,1,87};
-    Population population = Population(5,0,fitnes_func,10);
+//int main(){
+//    int b = 0;
+//    int * e = new int(1);
+//
+//    vector<int> shit = {1,1,2,3,2,54,4,1,87};
+//    Population population = Population(5,0,fitnes_func,10);
 //    population.generate_init();
-
-    population.prob_crossover();
+//
+//    population.prob_crossover();
 //    cout << "sadads"<< endl;
-    population.refresh_nofit();
+//    population.refresh_nofit();
 //    cout << ""<< endl;
 //    cout << "sldkf"<< endl;
-
+//
 //    while(true){
 //
 //        population.prob_crossover();
@@ -58,9 +59,10 @@ int main(){
 
 
 
-
-
-
+int main(){
+    srand ( time(NULL) );
+    Populaton populaton = Populaton(10,10, fitnes_func);
+    populaton.runAlgorithm();
 
 
 

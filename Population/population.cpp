@@ -17,23 +17,21 @@ bool fit_sort (Chromosome i,Chromosome j) { return (i.fitness>j.fitness); }
 void Population::generate_init()
 {
 
-    population_set = generate_subset(genes_length);
+    population_set = generate_subset(population_size);
     calculation_on_set();
     sort(population_set.begin(), population_set.end(), fit_sort);
     best_fit = population_set[0];
     calculation_on_set_ratio();
 }
 
-vector<Chromosome> Population::generate_subset(int size){
+vector<Chromosome> Population::generate_subset(size_t population_size){
 
     vector<Chromosome> population;
-    srand ( time(NULL) );
-    for(int i = 0; i < size; i++)
+        srand ( time(NULL) );
+    for(int i = 0; i < population_size; i++)
     {
-
-        population.push_back(Chromosome(this->size, fitnes_fun));
+        population.push_back(Chromosome(this->chromosome_size, fitnes_fun));
     }
-
 
     return population;
 }
@@ -68,11 +66,11 @@ void Population::calc_ratio() {
         {
             if(i == theard_num)
             {
-                end = size;
+                end = population_size;
             }
             else
             {
-                end += size/theard_num ;
+                end += population_size/theard_num ;
             }
             threads.push_back(thread(&Population::calc_fit,this, start, end));
             start = end;
@@ -103,11 +101,11 @@ void Population::calc_fithes()
         {
             if(i == theard_num)
             {
-                end = size;
+                end = population_size;
             }
             else
             {
-            end += size/theard_num ;
+            end += population_size/theard_num ;
             }
             threads.push_back(thread(&Population::calc_fit,this, start, end));
             start = end;
@@ -235,7 +233,7 @@ void Population::prob_crossover()
 void Population::refresh_nofit()
 {
 
-    auto lethul_num = static_cast<int>(floor(size * lethal));
+    auto lethul_num = static_cast<int>(floor(population_size * lethal));
 
     double fitnes_array[population_set.size()];
 
@@ -248,9 +246,9 @@ void Population::refresh_nofit()
 
     vector<Chromosome> new_population;
 
-    for (int l = 0; l < genes_length; l++)
+    for (int l = 0; l < chromosome_size; l++)
     {
-        for (int p = 0; l < genes_length; p++)
+        for (int p = 0; l < chromosome_size; p++)
         {
             if(fitnes_array[l] == population_set[p].getFitness())
             {
@@ -260,11 +258,10 @@ void Population::refresh_nofit()
         }
     }
 
-
     population_set = new_population;
 
-    Chromosome best = population_set[size - 1];
-    Chromosome worst = population_set[size - 2];
+    Chromosome best = population_set[population_size - 1];
+    Chromosome worst = population_set[population_size - 2];
 //
     vector<Chromosome> sub_set = generate_subset(lethul_num);
     vector<Chromosome> one;

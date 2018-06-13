@@ -13,11 +13,11 @@ CMakeFiles/chromosome.dir/Chromosome/Chromosome_binary.cpp.o
 CMakeFiles/chromosome.dir/Chromosome/functions.cpp.o
  /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.cpp
  /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.h
-CMakeFiles/chromosome.dir/Population/population.cpp.o
+CMakeFiles/chromosome.dir/Population/Populaton.cpp.o
  /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.h
- /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.cpp
- /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.h
+ /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/Populaton.cpp
+ /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/Populaton.h
 CMakeFiles/chromosome.dir/main.cpp.o
  /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/Chromosome.h
- /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.h
+ /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/Populaton.h
  /home/izu_um/Projects/CLionProjects/GeneticAlgorithm/main.cpp

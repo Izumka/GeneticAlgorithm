@@ -204,32 +204,32 @@ Chromosome/functions.cpp.s:
 	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Chromosome/functions.cpp.s
 .PHONY : Chromosome/functions.cpp.s
 
-Population/population.o: Population/population.cpp.o
+Population/Populaton.o: Population/Populaton.cpp.o
 
-.PHONY : Population/population.o
+.PHONY : Population/Populaton.o
 
 # target to build an object file
-Population/population.cpp.o:
-	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Population/population.cpp.o
-.PHONY : Population/population.cpp.o
+Population/Populaton.cpp.o:
+	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Population/Populaton.cpp.o
+.PHONY : Population/Populaton.cpp.o
 
-Population/population.i: Population/population.cpp.i
+Population/Populaton.i: Population/Populaton.cpp.i
 
-.PHONY : Population/population.i
+.PHONY : Population/Populaton.i
 
 # target to preprocess a source file
-Population/population.cpp.i:
-	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Population/population.cpp.i
-.PHONY : Population/population.cpp.i
+Population/Populaton.cpp.i:
+	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Population/Populaton.cpp.i
+.PHONY : Population/Populaton.cpp.i
 
-Population/population.s: Population/population.cpp.s
+Population/Populaton.s: Population/Populaton.cpp.s
 
-.PHONY : Population/population.s
+.PHONY : Population/Populaton.s
 
 # target to generate assembly for a file
-Population/population.cpp.s:
-	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Population/population.cpp.s
-.PHONY : Population/population.cpp.s
+Population/Populaton.cpp.s:
+	$(MAKE) -f CMakeFiles/chromosome.dir/build.make CMakeFiles/chromosome.dir/Population/Populaton.cpp.s
+.PHONY : Population/Populaton.cpp.s
 
 main.o: main.cpp.o
 
@@ -276,9 +276,9 @@ help:
 	@echo "... Chromosome/functions.o"
 	@echo "... Chromosome/functions.i"
 	@echo "... Chromosome/functions.s"
-	@echo "... Population/population.o"
-	@echo "... Population/population.i"
-	@echo "... Population/population.s"
+	@echo "... Population/Populaton.o"
+	@echo "... Population/Populaton.i"
+	@echo "... Population/Populaton.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

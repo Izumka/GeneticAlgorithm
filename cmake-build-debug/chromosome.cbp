@@ -102,10 +102,10 @@
 		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Chromosome/functions.h">
 			<Option target="chromosome"/>
 		</Unit>
-		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.cpp">
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/Populaton.cpp">
 			<Option target="chromosome"/>
 		</Unit>
-		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/population.h">
+		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/Population/Populaton.h">
 			<Option target="chromosome"/>
 		</Unit>
 		<Unit filename="/home/izu_um/Projects/CLionProjects/GeneticAlgorithm/main.cpp">
